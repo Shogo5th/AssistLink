@@ -1,35 +1,34 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-//app.component('example-component', require('./components/ExampleComponent.vue').default);
-
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
  require('./bootstrap')
 
- import { createApp } from 'vue'
- import HelloWorld from './components/Welcome.vue'
- 
+ import { createApp } from 'vue';
+ import * as Vue from 'vue';
+ //import * as VueRouter from 'vue-router';
+ import { createRouter, createWebHistory } from 'vue-router'
+ import HomeComponent from "./components/HomeComponent";
+ import HeaderComponent from "./components/HeaderComponent";
+ import FooterComponent from "./components/FooterComponent";
  const app = createApp({})
  
- app.component('hello-world', HelloWorld)
+ //app.component('home-component',HomeComponent)
+ app.component('header-component', HeaderComponent)
+ app.component('footer-component', FooterComponent)
+
+
+const routes = [
+    {
+        path:'/',
+        name: 'Home',
+        component: HomeComponent,FooterComponent
+    }
+]
+
+const router = createRouter({
+    history: createWebHistory(process.env.BASE_URL),
+    routes
+  })
+  
+  export default router
+
+
  
- app.mount('#app')
+ app.use(router).mount('#app')
