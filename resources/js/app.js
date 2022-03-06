@@ -1,24 +1,48 @@
- require('./bootstrap')
+
+ window.bootstrap = require('bootstrap')
+
 
  import { createApp } from 'vue';
  import * as Vue from 'vue';
  //import * as VueRouter from 'vue-router';
  import { createRouter, createWebHistory } from 'vue-router'
  import HomeComponent from "./components/HomeComponent";
- import HeaderComponent from "./components/HeaderComponent";
- import FooterComponent from "./components/FooterComponent";
+ import AdminComponent from "./components/AdminCOmponent";
+ import ManageOrganizationComponent from "./components/ManageOrganizationComponent";
+ import RecordOrgRepComponent from "./components/RecordOrgRepComponent";
+ import RecordOrganizationComponent from "./components/RecordOrganizationComponent";
+
  const app = createApp({})
  
- //app.component('home-component',HomeComponent)
- app.component('header-component', HeaderComponent)
- app.component('footer-component', FooterComponent)
+ 
 
-
+ // set link
 const routes = [
     {
         path:'/',
         name: 'Home',
-        component: HomeComponent,FooterComponent
+        component: HomeComponent
+    },
+    {
+        path:'/admin',
+        name:'Admin',
+        component: AdminComponent
+    },
+
+    {
+        path:'/admin/manage_organization',
+        name:'ManageOrg',
+        component: ManageOrganizationComponent
+    },
+    {
+        path:'/admin/manage_organization/record_org_rep',
+        name:'NewOrgRep',
+        component: RecordOrgRepComponent
+    },
+    {
+        path:'/admin/manage_organization/record_org',
+        name:'NewOrg',
+        component: RecordOrganizationComponent
     }
 ]
 

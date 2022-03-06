@@ -11,14 +11,11 @@
 
         <!-- Styles -->
         <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
         <div id="app">
-            <header-component></header-component>
-            <home-component></home-component>
-
             <router-view></router-view>
-            <footer-component></footer-component>
         </div>
         <!-- Scripts -->
         <script src="{{ mix('/js/app.js') }}" defer></script>

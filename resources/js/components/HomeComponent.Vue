@@ -1,36 +1,24 @@
 <template>
+    <gototop-component></gototop-component>
     <main>
-        <!-- content 1 Image Slide-->
+        <header-component></header-component>
+        <!-- content 1 Carousel-->
         <div class="py-4" id="content1">
             <section>
-                <div class="container">
-                    <div class="row mt-5 mb-5">
+                <div class="container-fluid">
+                    <div class="row mb-5">
                         <div id="slideCaprition" class="carousel slide" data-bs-ride="carousel">
+
                             <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#slideCaprition" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#slideCaprition" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#slideCaprition" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#slideCaprition" v-bind:data-bs-slide-to="index" v-for="(indicator,index) in indicators" 
+                                v-bind:class="{ active: index==0 }" v-bind:aria-current="{true: index==0}" v-bind:aria-label="'Slide' + index"></button>
                             </div>
+
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="../../../public/images/sampleslideimage.png" class="d-block w-100" alt="...">
+                                <div class="carousel-item" v-for="(banner,index) in banners" v-bind:class="{ active: index==0 }">
+                                    <img v-bind:src="banner.img" class="slideImage" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5>First slide label</h5>
-                                        <p>Some representative placeholder content for the first slide.</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../../../public/images/sampleslideimage.png" class="d-block w-100" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>Second slide label</h5>
-                                        <p>Some representative placeholder content for the second slide.</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../../../public/images/sampleslideimage.png" class="d-block w-100" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>Third slide label</h5>
-                                        <p>Some representative placeholder content for the third slide.</p>
+                                        <p v-html="banner.description"></p>
                                     </div>
                                 </div>
                             </div>
@@ -50,66 +38,78 @@
         <!-- content 1 -->
 
         <!-- content 2  About Us -->
-        <div class="py-4 bg-light" id="content2">
-            <section>
-                <div class="container">
-                    <div class="row mt-5 mb-5">
-                        <div class="col-md-5 order-md-1  text-center">
-                        <img class="img-fluid" src="../../../public/images/samplelogo.png" alt="sample image">
-                        </div>
-                        <div class="col-md-7 order-md-3 my-auto">
-
-                            <h1 class="text-center mb-3 ">About Us</h1>
-                            <p class="text-break">
-                                Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                                Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                                Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                                Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                            </p>
-                            <div class="text-center">
-                                <a class="btn btn-danger btn-lg" href="#" role="button">Read More</a>
+            <div class="py-4 bg-light" id="content2">
+                <section>
+                    <div class="container">
+                        <div class="row mt-5 mb-5">
+                            <h1 class="text-center mb-5 ">About Us</h1>
+                            
+                            <div class="col-md-5 mb-5 text-center">
+                                <animation-component>
+                                    <img class="img-fluid" src="../../../public/images/samplelogo.png" alt="sample image">
+                                </animation-component>
                             </div>
+                            <div class="col-md-7 mb-5 my-auto">
+                                <animation-component>
+                                    <p class="text-break">
+                                        Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+                                        Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+                                        Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+                                        Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+                                    </p>
+                                </animation-component>
+                                <div class="text-center mt-5">
+                                    <animation-component>
+                                        <a class="btn btn-lg btn-outline-primary mt-3" href="#" role="button">Read More</a>
+                                    </animation-component>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
+                </section>
+            </div>
         <!-- content 2 -->
 
         <!-- content 3 FAQ -->
         <div class="py-4" id="content3">
             <section>
                 <div class="container" id="box">
-                    <div class="row mt-3">
+                    <div class="row  mb-5">
                         <div class="col-md-12 order-md-1  p-5">
                             <h1 class="text-center  mb-5">Frequently Asked Questions</h1>
                             
                             
                             <!-- FAQ Accordions -->
-                            <div class="accordion" id="QuestionsAccordion">
-                                <div class="accordion-item" v-for="(faq,index) in faqs" :key=faq>
-                                    <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" v-bind:data-bs-target="'#collapse' + index" aria-expanded="false" aria-controls="collapseOne">
-                                        {{faq.question}}
-                                    </button>
-                                    </h2>
-                                    <div v-bind:id="'collapse' + index" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                                        <div class="accordion-body">
+                            <div class="accordion w-80" id="QuestionsAccordion">
+                                <animation-component>
+                                    <div class="accordion-item" v-for="(faq,index) in faqs" :key=faq>
+                                    
+                                        <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" v-bind:data-bs-target="'#collapse' + index" aria-expanded="false" aria-controls="collapseOne">
+                                            {{faq.question}}
+                                        </button>
+                                        </h2>
+                                        <div v-bind:id="'collapse' + index" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                                            <div class="accordion-body">
 
-                                            <!-- answer -->
-                                            <p v-html="faq.answer"></p>
-                                            
+                                                <!-- answer -->
+                                                <p v-html="faq.answer"></p>
+                                                
+                                            </div>
                                         </div>
+                                    
                                     </div>
-                                </div>
+                                </animation-component>
                             </div> 
                             <!-- FAQ Accordions -->
 
                             <!-- Read More button -->
-                            <div class="text-center">
-                                <a class="btn btn-danger btn-lg mt-3" href="#" role="button">Read More</a>
-                            </div>
-
+                            <animation-component>
+                                <div class="text-center mt-5">
+                                    <a class="btn btn-lg btn-outline-primary" href="#" role="button">Read More</a>
+                                </div>
+                            </animation-component>
                         </div>
                     </div>
                 </div>
@@ -121,22 +121,24 @@
         <div class="py-4" id="content4">
             <section>
                 <div class="container" id="box">
-                    <div class="row mt-3">
-                        <div class="col-md-12 order-md-1  p-5">
-                            <h1 class="text-center  mb-5">Sponsors</h1>
+                    <div class="row mb-3">
+                        <div class="col-md-12 order-md-1  p-2">
+                            <h1 class="text-center ">Sponsors</h1>
                         </div>
                     </div>
 
-                    
-                    <div class="row mt-3">
-
-                        <div class="col-lg-4 col-sm-6 order-md-1  p-5" v-for="(sponsor,index) in sponsors" :key=sponsor>
+                        
+                    <div class="row mb-5">
+                        
+                        
+                        <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(sponsor,index) in sponsors" :key=sponsor>
+                        <animation-component>
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0">
-                                    <div class="col-md-3">
+                                    <div class="col-md-5">
                                         <img v-bind:src= "sponsor.img" alt="SponsorImage" class="align-middle">
                                     </div>
-                                    <div class="col-md-9">
+                                    <div class="col-md-7">
                                         <div class="card-body">
                                             <h5 class="card-title">{{ sponsor.name}}</h5>
                                             <p class="card-text">{{ sponsor.description }}</p>
@@ -144,9 +146,10 @@
                                     </div>
                                 </div>
                             </div>
+                        </animation-component>
                         </div>
-
-                          
+                        
+                            
                     </div>
                 </div>
             </section>
@@ -154,12 +157,54 @@
         <!-- content 4 -->
 
    </main>
+   <footer-component></footer-component>
 </template>
  
  <script>
-     export default {
-         data() {
-             return {
+    import HeaderComponent from './BaseComponents/HeaderComponent'
+    import AnimationComponent from './BaseComponents/AnimationComponent'
+    import FooterComponent from './BaseComponents/FooterComponent'
+    import GotoTopComponent from './BaseComponents/GotoTopComponent'
+
+    export default {
+        data() {
+            return {
+
+                indicators: [
+                    {
+                        indicator: "slide1"
+                    },
+                    {
+                        indicator: "slide2"
+                    },
+                    {
+                        indicator: "slide3"
+                    },
+                    {
+                        indicator: "slide4"
+                    }
+                   
+                ],
+
+                banners: [
+                    {
+                        img:require('../../../public/images/sampleslideimage.png').default,
+                        description: "<h5>Text Text Text Text</h5>"
+                    },
+                                        {
+                        img:require('../../../public/images/sampleslideimage.png').default,
+                        description: "<h5>Text Text Text Text</h5>"
+                    },
+                    {
+                        img:require('../../../public/images/sampleslideimage.png').default,
+                        description: "<h5>Text Text Text Text</h5>"
+                    },
+                    {
+                        img:require('../../../public/images/sampleslideimage.png').default,
+                        description: "<h5>Text Text Text Text</h5>"
+                    }
+
+                ],
 
                 faqs: [
                     {
@@ -205,6 +250,35 @@
                  ]
                  
              }
-         }
+        },
+        components: {
+            'animation-component' : AnimationComponent,
+            'header-component' : HeaderComponent,
+            'footer-component' : FooterComponent,
+            'gototop-component' : GotoTopComponent
+        }
      }
  </script>
+
+ <style>
+ 
+    /* adjust slide image height */
+    .slideImage {
+        height: calc(100vh - 195px);
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+
+    @media screen (min-width: 577px)and (max-width: 767px) {
+    .slideImage{
+        height: calc(100vh);
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .slideImage {
+            height: calc(100vh - 140px);
+        }
+    }
+ </style>

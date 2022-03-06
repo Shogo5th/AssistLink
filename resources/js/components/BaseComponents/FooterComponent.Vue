@@ -23,7 +23,7 @@
                 <!--Grid column-->
                 <div class="col-md-4 col-lg-6 col-xl-6 mx-auto mb-4">
 
-                <img src="../../../public/images/samplelogo.png" alt="logo" class="align-middle">
+                <img src="../../../../public/images/samplelogo.png" alt="logo" class="align-middle">
 
                 <h5 class="mt-3">Contact Information</h5>
 
