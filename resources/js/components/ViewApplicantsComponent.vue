@@ -26,7 +26,24 @@
                             <div class="card">
                                 <div class="card-body mb-4">
                                     <div class="text-center mt-5 mb-4">
+<<<<<<< HEAD
                                         <router-link v-bind:to="{name: 'NewApplicant',params:{name: this.orgName}}">
+=======
+<<<<<<< HEAD
+                                        <router-link v-bind:to="{name: 'NewApplicant',params:{name: this.orgName}}">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                        <router-link v-bind:to="{name: 'NewApplicant',params:{name: this.orgName}}">
+=======
+                                        <router-link v-bind:to="{name: 'NewApplicant',params:{name: this.orgName, id: this.orgID}}">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                                        <router-link v-bind:to="{name: 'NewApplicant',params:{name: this.orgName, id: this.orgID}}">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                                             <a href="#" class="btn btn-primary">Add Applicant</a>
                                         </router-link>
                                     </div>
@@ -57,19 +74,65 @@
                 _menues: [
                     {
                         name: "RegisterApplicants",
+<<<<<<< HEAD
                         short: "Applicant",
+=======
+<<<<<<< HEAD
+                        short: "Applicant",
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        short: "Applicant",
+=======
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                         icon: "<i class='fas fa-calendar-alt'></i>",
                         link: "ManageOrg"
                     }
 
                 ],
+<<<<<<< HEAD
                 orgID : "",
                 orgName : ""
+=======
+<<<<<<< HEAD
+                orgID : "",
+                orgName : ""
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                orgID : "",
+                orgName : ""
+=======
+                orgID : "OR001",
+                orgName : "Organization A"
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                orgID : "OR001",
+                orgName : "Organization A"
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
             }
         },
         components: {
             'sidebar-component' : SidebarComponent
         },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
         created: function() {
 
             
@@ -100,6 +163,29 @@
                         this.applicants = response.data;
                 });
             }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+        
+        created() {
+                axios.get('/getApplicant',this.orgID)
+                .then(response => {
+                    this.applicants = response.data;
+                    console.log(response.data)
+                });
+        },
+        methods: {
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
         }
     }
 

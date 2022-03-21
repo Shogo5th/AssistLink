@@ -57,7 +57,24 @@
                         </div>
                         <div class="mb-3">
                           <label class="form-label required">Password</label>
+<<<<<<< HEAD
                           <input type="password" class="form-control" name="password">
+=======
+<<<<<<< HEAD
+                          <input type="password" class="form-control" name="password">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                          <input type="password" class="form-control" name="password">
+=======
+                          <input type="text" class="form-control" name="password">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                          <input type="text" class="form-control" name="password">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                         </div>
                         <div class="modal-footer justify-content-center">
                           <button type="submit" class="btn btn-primary">Login</button>
@@ -91,10 +108,13 @@
               {
                 title: "Register",
                 num: "#SelfRegister"
+<<<<<<< HEAD
               },
               {
                 title: "Contribution",
                 num: "#Contribution"
+=======
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
               },
               {
                 title: "FAQ",
@@ -139,6 +159,16 @@
 
 
           axios.post('/loginOrgRep',check).then(response => {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                     
             console.log(response.data);
             if(response.data == 1) {
@@ -167,6 +197,46 @@
             }
           });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                    if(response.data == "admin") {
+                      document.cookie = 'type=admin';
+                      
+                      const modal = bootstrap.Modal.getInstance(loginModal)
+                      modal.hide()
+
+                      this.$router.push('/admin')
+
+                    }else if(response.data != 0) {
+                      document.cookie = 'type=orgrep';
+                      document.cookie = 'orgID=' + response.data[0].OrganizationorgID
+
+                      const modal = bootstrap.Modal.getInstance(loginModal)
+                      modal.hide()
+                     
+                      this.$router.push({
+                        name: 'OrganizationRep', 
+                        params: { orgID:response.data[0].OrganizationorgID }
+                      });
+                    }else {
+                      alert("username and password are wrong !");
+                      return null;
+                    }
+                });
+
+            //
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
         }
       },
       mounted: function() {

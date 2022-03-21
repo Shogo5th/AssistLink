@@ -23,8 +23,29 @@
                                         <div class="form-row my-5">
                                             <div class="col-lg-12 mb-3">
                                                 <label class="form-label required">File Name</label>
+<<<<<<< HEAD
                                                 <input required pattern=^[-0-9a-zA-Z_.\s]+$ 
                                                 title="File names containing multibyte characters are not supported" 
+=======
+<<<<<<< HEAD
+                                                <input required pattern=^[-0-9a-zA-Z_.\s]+$ 
+                                                title="File names containing multibyte characters are not supported" 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                                <input required pattern=^[-0-9a-zA-Z_.\s]+$ 
+                                                title="File names containing multibyte characters are not supported" 
+=======
+                                                <input required pattern=^[-0-9a-zA-Z_.]+$ 
+                                                oninvalid="this.setCustomValidity('File names containing multibyte characters are not supported')" 
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                                                <input required pattern=^[-0-9a-zA-Z_.]+$ 
+                                                oninvalid="this.setCustomValidity('File names containing multibyte characters are not supported')" 
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                                                 type="text" class="form-control" placeholder="File name" name="filename">
                                             </div>
                                         </div>
@@ -59,7 +80,24 @@
                                         </div>
                                          <div class="text-center mt-3 mb-3">
                                             <router-link v-bind:to="{name: 'Home'}">
+<<<<<<< HEAD
                                                 <button type="button" class="btn bfdtn-lg btn-outline-danger" v-show="this.isUploaded">Finish</button>
+=======
+<<<<<<< HEAD
+                                                <button type="button" class="btn bfdtn-lg btn-outline-danger" v-show="this.isUploaded">Finish</button>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                                <button type="button" class="btn bfdtn-lg btn-outline-danger" v-show="this.isUploaded">Finish</button>
+=======
+                                                <button type="button" class="btn btn-lg btn-outline-danger">Cancel</button>
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                                                <button type="button" class="btn btn-lg btn-outline-danger">Cancel</button>
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                                             </router-link>          
                                         </div>
                                     </form>
@@ -78,7 +116,24 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
+<<<<<<< HEAD
                             <h4 class="modal-title">Confirmation</h4>
+=======
+<<<<<<< HEAD
+                            <h4 class="modal-title">Confirmation</h4>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                            <h4 class="modal-title">Confirmation</h4>
+=======
+                            <h4 class="modal-title">Log out</h4>
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                            <h4 class="modal-title">Log out</h4>
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
@@ -107,10 +162,39 @@
                            <h4 class="modal-title text-center">Success</h4>
                         </div>
                         <div class="modal-body">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                             <p>The new document is successfully uploaded.</p>
                         </div>
                         <div class="modal-footer justify-content-center mt-3 mb-3">
                             <router-link v-bind:to="{name: 'SelfUpload',params:{username: this.username, IDno: this.IDno, orgName: this.orgName}}">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                            <p>The new Applicant account is successfully created.</p>
+                            <p>The username and default password were generated</p>
+                        </div>
+                        <div class="modal-footer justify-content-center mt-3 mb-3">
+                            <router-link v-bind:to="{name: 'uploadDocument',params:{username: this.username, IDno: this.IDno, orgName: this.orgName}}">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal" v-on:click="closeThankyouModal">Continue</button>
                             </router-link>
                         </div>
@@ -132,7 +216,22 @@
                 _menues: [
                     {
                         name: "Register Applicant",
+<<<<<<< HEAD
                         short: "Applicant",
+=======
+<<<<<<< HEAD
+                        short: "Applicant",
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        short: "Applicant",
+=======
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                         icon: "<i class='fas fa-calendar-alt'></i>",
                         link: "viewApplicants"
                     }
@@ -144,8 +243,27 @@
                 IDno: this.$route.params.IDno,
                 username: this.$route.params.username,
                 filename: "",
+<<<<<<< HEAD
                 description: "",
                 isUploaded: false
+=======
+<<<<<<< HEAD
+                description: "",
+                isUploaded: false
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                description: "",
+                isUploaded: false
+=======
+                description: ""
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                description: ""
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
             }
         },
         components: {
@@ -203,7 +321,22 @@
             closeThankyouModal() {
                 const closeThankyouModal = bootstrap.Modal.getInstance(thankyouModal)
                 closeThankyouModal.hide()
+<<<<<<< HEAD
                 this.isUploaded  = true;
+=======
+<<<<<<< HEAD
+                this.isUploaded  = true;
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                this.isUploaded  = true;
+=======
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
             }
 
 

@@ -75,11 +75,35 @@
                                 <h4 class="text-center" mt-3>Select Organization</h4>
                             </div>
                         </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                         <div class="row mb-3">
                             <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(org,index) in organizations" :key=org>
                                 <div class="card mb-3" style="max-width: 540px;">
                                     <div class="card-header">
                                         <h4>ID:{{org.orgID}}</h4>
+<<<<<<< HEAD
+=======
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+                        <div class="row mb-5">
+                            <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(org,index) in organizations" :key=org>
+                                <div class="card mb-3" style="max-width: 540px;">
+                                    <div class="card-header">
+<<<<<<< HEAD
+                                        <h4>ID:{{org.orgID}}</h4>
+=======
+                                        <h4>{{org.orgID}}</h4>
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                                     </div>
                                     <div class="card-body mb-3">
                                         <h5 class="card-title">{{org.orgName}}</h5>
@@ -92,6 +116,11 @@
                                 </div> 
                             </div>
                         </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
 
                         <div class="row mb-5">
                             <div class="col-12 text-center">
@@ -101,11 +130,19 @@
                             </div>
                         </div>
                         
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                     </div>
                 </section>
             </div>
         <!-- content-->
 
+<<<<<<< HEAD
         <!-- content Conrtribution -->
             <div class="py-4 bg-light" id="Contribution">
                 <section>
@@ -145,6 +182,18 @@
 
 
 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+
+
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
         <!-- content 3 FAQ -->
         <div class="py-4 bg-light" id="FAQ">
             <section>
@@ -272,7 +321,24 @@
                 faqs: [
                     {
                         question: "1) Am I able to register for an account by myself ?",
+<<<<<<< HEAD
                         answer: "A1) Yes, under the register column above the FAQ, users can now manually register themselves, without the direct help of Organization Representatives."
+=======
+<<<<<<< HEAD
+                        answer: "A1) Yes, under the register column above the FAQ, users can now manually register themselves, without the direct help of Organization Representatives."
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        answer: "A1) Yes, under the register column above the FAQ, users can now manually register themselves, without the direct help of Organization Representatives."
+=======
+                        answer: "A1) Yes, under the register column below the FAQ, users can now manually register themselves, without the direct help of Organization Representatives."
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                        answer: "A1) Yes, under the register column below the FAQ, users can now manually register themselves, without the direct help of Organization Representatives."
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                     },
                     {
                         question: "2) How will I log in to my account ?",
@@ -328,13 +394,35 @@
         },
                 
         created() {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
             
             axios.get('/loginCheck')
             .then(response => {
 
                 if(response.data == 'none') {
                      
+<<<<<<< HEAD
                     axios.get('/getorg/getlatestorg')
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    axios.get('/getorg/getlatestorg')
+=======
+                    axios.get('/api/getorg')
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                    axios.get('/api/getorg')
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                     .then(response => {
                         this.organizations = response.data;
                     });
@@ -351,6 +439,26 @@
                 }
             });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+            
+
+=======
+                axios.get('/api/getorg')
+                .then(response => {
+                    this.organizations = response.data;
+                });
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
         },
      }
  </script>

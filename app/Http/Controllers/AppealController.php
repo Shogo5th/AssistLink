@@ -40,6 +40,7 @@ class AppealController extends Controller
         $appeal = Appeal::find($request);
         return $appeal;
     }
+<<<<<<< HEAD
 
     public function getCurrentAppeals() {
         $today = new Datetime();
@@ -59,4 +60,6 @@ class AppealController extends Controller
 
         return $data;
     }
+=======
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
 }

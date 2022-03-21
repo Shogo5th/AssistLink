@@ -4,7 +4,11 @@
         <header-component></header-component>
 
          <!-- content -->
+<<<<<<< HEAD
             <div class="py-4 bg-light" id="viewAllOrganizations">
+=======
+            <div class="py-4 bg-light" id="SelfRegister">
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                 <section>
                     <div class="container">
                         <div class="row mb-3">
@@ -14,7 +18,11 @@
                             </div>
                         </div>
                         <div class="row mb-5">
+<<<<<<< HEAD
                             <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(org) in organizations" :key=org>
+=======
+                            <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(org,index) in organizations" :key=org>
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                                 <div class="card mb-3" style="max-width: 540px;">
                                     <div class="card-header">
                                         <h4>ID:{{org.orgID}}</h4>

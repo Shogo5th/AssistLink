@@ -24,17 +24,62 @@
                                         <div class="form-row my-5">
                                             <div class="col-lg-6 mb-3">
                                                 <label class="form-label required">Full Name</label>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                                                 <input required pattern=.*\S+.* title="Enter Firstname without space." type="text" class="form-control" placeholder="First Name" name="firstname">
                                             </div>
                                             <div class="col-lg-6">
                                                 <input type="text" required pattern=.*\S+.* title="Enter Lastname without space." class="form-control" placeholder="Last Name" name="lastname">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                                                <input required pattern=.*\S+.* oninvalid="this.setCustomValidity('Enter Firstname without space.')" type="text" class="form-control" placeholder="First Name" name="firstname">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <input type="text" required pattern=.*\S+.* oninvalid="this.setCustomValidity('Enter Lastname without space.')" class="form-control" placeholder="Last Name" name="lastname">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                                             </div>
                                         </div>
                                         <div class="form-row my-5">
                                             <div class="col-lg-12">
                                                 <label class="form-label required">IDno</label>
                                                 <input required pattern="^([a-zA-Z0-9]{6,15})$" 
+<<<<<<< HEAD
                                                 title="Enter enter between 6 and 15 single-byte alphanumeric characters." 
+=======
+<<<<<<< HEAD
+                                                title="Enter enter between 6 and 15 single-byte alphanumeric characters." 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                                title="Enter enter between 6 and 15 single-byte alphanumeric characters." 
+=======
+                                                oninvalid="this.setCustomValidity('Enter enter between 6 and 15 single-byte alphanumeric characters.')" 
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                                                oninvalid="this.setCustomValidity('Enter enter between 6 and 15 single-byte alphanumeric characters.')" 
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                                                 type="text" class="form-control" placeholder="IDno" name="IDno">
                                             </div>
                                         </div>
@@ -48,7 +93,24 @@
                                             <div class="col-lg-12 mb-3">
                                                 <label class="form-label required">Household Income</label>
                                                 <input required pattern="^([1-9]\d*|0)(\.\d+)?$" type="text" class="form-control" placeholder="household income" name="householdIncome"
+<<<<<<< HEAD
                                                 title="Enter positive number">
+=======
+<<<<<<< HEAD
+                                                title="Enter positive number">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                                title="Enter positive number">
+=======
+                                                oninvalid="this.setCustomValidity('Enter positive number')">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                                                oninvalid="this.setCustomValidity('Enter positive number')">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                                             </div>
                                         </div>
                                         <div class="text-center mt-3 mb-3">
@@ -73,7 +135,24 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
+<<<<<<< HEAD
                             <h4 class="modal-title">Confirmation</h4>
+=======
+<<<<<<< HEAD
+                            <h4 class="modal-title">Confirmation</h4>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                            <h4 class="modal-title">Confirmation</h4>
+=======
+                            <h4 class="modal-title">Log out</h4>
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                            <h4 class="modal-title">Log out</h4>
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
@@ -108,7 +187,24 @@
                             <p>The username and default password were generated</p>
                         </div>
                         <div class="modal-footer justify-content-center mt-3 mb-3">
+<<<<<<< HEAD
                             <router-link v-bind:to="{name: 'uploadDocument'}">
+=======
+<<<<<<< HEAD
+                            <router-link v-bind:to="{name: 'uploadDocument'}">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                            <router-link v-bind:to="{name: 'uploadDocument'}">
+=======
+                            <router-link v-bind:to="{name: 'uploadDocument',params:{username: this.username, IDno: this.IDno, orgName: this.orgName}}">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                            <router-link v-bind:to="{name: 'uploadDocument',params:{username: this.username, IDno: this.IDno, orgName: this.orgName}}">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal" v-on:click="closeThankyouModal">Continue</button>
                             </router-link>
                         </div>
@@ -131,7 +227,22 @@
                 _menues: [
                     {
                         name: "Register Applicant",
+<<<<<<< HEAD
                         short: "Applicant",
+=======
+<<<<<<< HEAD
+                        short: "Applicant",
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        short: "Applicant",
+=======
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                         icon: "<i class='fas fa-calendar-alt'></i>",
                         link: "viewApplicants"
                     }
@@ -142,8 +253,29 @@
                 fullname: "",
                 IDno: "", 
                 householdIncome: "",
+<<<<<<< HEAD
                 orgID: "",
                 orgName:"",
+=======
+<<<<<<< HEAD
+                orgID: "",
+                orgName:"",
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                orgID: "",
+                orgName:"",
+=======
+                orgID: this.$route.params.id,
+                orgName:this.$route.params.name,
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                orgID: this.$route.params.id,
+                orgName:this.$route.params.name,
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
                 username: "",
                 
                 allerros: [],
@@ -155,6 +287,16 @@
         components: {
             'sidebar-component' : SidebarComponent
         },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
         created: function() {
 
             axios.get('/loginCheck')
@@ -176,6 +318,19 @@
 
         
         },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+=======
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
         methods: {
                 checkValidation(event) {
                         const {firstname,lastname,address,IDno,householdIncome} = Object.fromEntries(new FormData(event.target));
