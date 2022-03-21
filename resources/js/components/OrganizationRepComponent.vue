@@ -7,7 +7,8 @@
                 <div class="container-fluid" id="box">
                     <div class="row mb-3">
                         <div class="col-md-12 order-md-1  p-2">
-                            <h1 class="text-center">Welcom Admin</h1>
+                            <h1 class="text-center">Welcome {{this.orgName}}</h1>
+                            <h5>{{this.fullname}} Email: {{this.email}}</h5>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -18,7 +19,6 @@
                 </div>
             </section>
         </div>
-       
 
     </sidebar-component>
 
@@ -28,46 +28,50 @@
 <script>
     import SidebarComponent from './BaseComponents/SidebarComponent'
     import axios from 'axios'
-    import Router from 'vue-router'
 
     export default {
-        data() {
+        data: function() {
             return {
                 _menues: [
                     {
-                        name: "Manage Organization",
-                        short: "Organization",
+                        name: "Register Applicants",
+                        short: "Applicant",
                         icon: "<i class='fas fa-calendar-alt'></i>",
-                        link: "ManageOrg"
+                        link: "viewApplicants"
                     }
 
-                ]
+                ],
+                orgID: "",
+                orgName: "",
+                fullname: "",
+                email: "",
             }
         },
         components: {
             'sidebar-component' : SidebarComponent
         },
-        methods: {
-        },
         created: function() {
-   
+
+            
             axios.get('/loginCheck')
                 .then(response => {
 
                     if(response.data == 'none') {
-                            this.$router.push({
+                         this.$router.push({
                             name: 'Home', 
                         });
-                    }else if(response.data != 'admin'){
+                    }else if(response.data == 'admin'){
                         this.$router.push({
-                            name: 'OrganizationRep', 
+                            name: 'Admin', 
                         });
+                    }else {
+                        this.orgName = response.data['orgName'];
+                        this.orgID = response.data['orgID'];
+                        this.fullname = response.data['fullname'];
+                        this.email = response.data['email'];
                     }
+                    
             });
-
-        
-        },
-        mounted: function () {
         }
     }
 

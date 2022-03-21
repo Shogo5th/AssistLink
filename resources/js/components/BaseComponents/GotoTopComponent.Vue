@@ -63,7 +63,7 @@ export default {
         padding: .5rem;
         background-color: rgba(123,111,113,.7);
         border-radius: .5rem;
-        z-index: var(--z-tooltop);
+        z-index: 99;
         transition: .4s;
         visibility: hidden;
 
