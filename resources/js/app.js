@@ -17,15 +17,34 @@
  import UploadDocumentComponent from "./components/UploadDocumentComponent";
  import SelfAddApplicantComponent from "./components/SelfAddApplicantComponent";
  import SelfUploadDocumentComponent from "./components/SelfUploadDocumentComponent";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
  import OrganizeAidAppealComponent from "./components/OrganizeAidAppealComponent";
  import AddAppealComponent from "./components/AddAppealComponent";
  import AllOrganizationsComponent from "./components/AllOrganizationsComponent";
  import AppealDetailComponent from "./components/AppealDetailComponent";
  import ViewAppealComponent from "./components/ViewAppealComponent";
  import SelfContributionComponent from "./components/SelfContributionComponent";
+<<<<<<< HEAD
  import RecordContributionComponent from "./components/RecordContributionComponent";
  import AddContributionComponent from "./components/AddContributionComponent";
 
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+ import OrganizeAidAppealComponent from "./components/OrganizeAidAppealComponent";
+ import AddAppealComponent from "./components/AddAppealComponent";
+ import AllOrganizationsComponent from "./components/AllOrganizationsComponent";
+ 
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
 
  const app = createApp({})
  
@@ -81,16 +100,33 @@ const routes = [
         component: UploadDocumentComponent
     },
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
         path:'/orgrep/organize_aid_appeal',
         name:'organizeAidAppeal',
         component: OrganizeAidAppealComponent
     },
     {
+<<<<<<< HEAD
         path:'/orgrep/organize_aid_appeal/add_new_appeal',
+=======
+<<<<<<< HEAD
+        path:'/orgrep/organize_aid_appeal/add_new_appeal',
+=======
+        path:'/orgrep/organize_aid_appeal',
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
         name:'NewAppeal',
         component: AddAppealComponent
     },
     {
+<<<<<<< HEAD
         path:'/orgrep/record_contribution',
         name:'recordContribution',
         component: RecordContributionComponent
@@ -101,12 +137,24 @@ const routes = [
         component: AddContributionComponent
     },
     {
+=======
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
         path:'/applicant/view_all_organi',
         name:'viewAllOrganizations',
         component: AllOrganizationsComponent
         
     },
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
         path:'/applicant/selft_register',
         name:'SelfRegister',
         component: SelfAddApplicantComponent
@@ -115,6 +163,10 @@ const routes = [
         path:'/applicant/selft_register/self_upload_document',
         name:'SelfUpload',
         component: SelfUploadDocumentComponent
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
     },
     {
         path:'/donor/view_appeal',
@@ -131,6 +183,11 @@ const routes = [
         name:'SelfContribution',
         component: SelfContributionComponent
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
     }
 ]
 

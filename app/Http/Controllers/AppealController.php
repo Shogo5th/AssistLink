@@ -25,6 +25,7 @@ class AppealController extends Controller
       
     }
 
+<<<<<<< HEAD
     public function searchCurrent(){
         
         $today = new Datetime();
@@ -37,6 +38,8 @@ class AppealController extends Controller
     }
 
 
+=======
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
     public function add(Request $request) {
         $appeal = new Appeal;
         $appeal->fromDate =  $request->fromDate;
@@ -52,6 +55,10 @@ class AppealController extends Controller
         $appeal = Appeal::find($request);
         return $appeal;
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
 
     public function getCurrentAppeals() {
         $today = new Datetime();
@@ -62,6 +69,7 @@ class AppealController extends Controller
         return $data;
     }
 
+<<<<<<< HEAD
     public function getCurrentAppealsInOrganization(Request $request) {
         $today = new Datetime();
         $data = Appeal::where('OrganizationorgID',$request->orgID)->whereDate('toDate', '>=', $today)
@@ -72,6 +80,8 @@ class AppealController extends Controller
     }
 
 
+=======
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
     public function getPastAppeals() {
 
         $today = new Datetime();
@@ -81,4 +91,9 @@ class AppealController extends Controller
 
         return $data;
     }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
 }

@@ -125,6 +125,7 @@
                         short: "Applicant",
                         icon: "<i class='fas fa-calendar-alt'></i>",
                         link: "viewApplicants"
+<<<<<<< HEAD
                     },
                     {
                         name: "Organize Aid Appeal",
@@ -137,6 +138,8 @@
                         short: "Contribution",
                         icon: "<i class='fas fa-calendar-alt'></i>",
                         link: "recordContribution"
+=======
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
                     }
 
                 ],

@@ -4,6 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Organizationrep;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
 use App\Models\Organization;
 use App\Models\Applicant;
 use App\Models\User;
@@ -11,6 +24,24 @@ use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 
 use App\Mail\WelcomeMail;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+use App\Models\User;
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+=======
+use App\Models\User;
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
 
 class OrganizationrepController extends Controller
 {
@@ -45,6 +76,19 @@ class OrganizationrepController extends Controller
 
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
     /*
     If wrong, return 0
     If Admin, return 1
@@ -92,4 +136,41 @@ class OrganizationrepController extends Controller
         Mail::send(new WelcomeMail($parameter));
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+    public function login(Request $request) {
+        // INNER JOIN
+
+        if(($request->username == "admin") && ($request->password == "adminpassword")) {
+            return "admin";
+        }else {
+            $account = Organizationrep::Join('users', 'organizationreps.userusername', '=', 'organizationreps.userusername')
+            ->select('users.username','password','Organizationreps.OrganizationorgID')->where('username', '=', $request->username)->where('password', '=', $request->password)
+            ->get();
+    
+            $result = count($account);
+            if($result !=0) {
+                return $account;
+            }else {
+                return 0;
+            }
+            
+        }
+
+    }
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
 }

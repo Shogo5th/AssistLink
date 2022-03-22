@@ -22,6 +22,14 @@ class OrganizationController extends Controller
         
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
     public function getLastSix() {
         
         $data = Organization::orderBy('orgID', 'DESC')->take(6)->get()->toArray();
@@ -29,6 +37,20 @@ class OrganizationController extends Controller
     }
 
     
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+    
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+    
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
     public function loginCheck()
     {   
         $request = session()->get('type','none');
@@ -45,6 +67,29 @@ class OrganizationController extends Controller
         }else {
             return 'admin';
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+    public function find(Request $request)
+    {   
+        //$organization = new Organization;
+        $data = Organization::select('OrgName')->where('orgID', '=', $request); // fetch all organization in table
+        return $data;
+        
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
     }
 
     /**

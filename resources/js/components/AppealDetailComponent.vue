@@ -80,7 +80,10 @@
                     .then(response => {
                         this.orgName = response.data[0]['orgName'];
                         this.address = response.data[0]['address'];
+<<<<<<< HEAD
                         Cookies.set('orgName',this.orgName);
+=======
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
                     });
                 }else if(response.data != 'admin'){
                     this.$router.push({

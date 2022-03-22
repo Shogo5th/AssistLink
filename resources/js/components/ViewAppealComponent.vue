@@ -17,7 +17,11 @@
                                 <ul class="nav nav-tabs nav-fill mb-3" id="ex1" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link active" id="ex2-tab-1" data-bs-toggle="tab" href="#ex2-tabs-1" role="tab" 
+<<<<<<< HEAD
                                     aria-controls="ex2-tabs-1" aria-selected="true">Current Appeals</a>
+=======
+                                    aria-controls="ex2-tabs-1" aria-selected="true">current Appeals</a>
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="ex2-tab-2" data-bs-toggle="tab" 
@@ -37,8 +41,13 @@
                                                             <h4>ID:{{current.appealID}}</h4>
                                                         </div>
                                                         <div class="card-body mb-3">
+<<<<<<< HEAD
                                                             <h5>From Date: <span style="font-size:16px;">{{current.fromDate}}</span></h5>
                                                             <h5>To Date: <span style="font-size:16px;">{{current.toDate}}</span></h5>
+=======
+                                                            <h5>From Date: {{current.fromDate}}</h5>
+                                                            <h5>To Date: {{current.toDate}}</h5>
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
                                                             <h5>description:</h5>
                                                             <p>{{current.description}}</p>
                                                             <router-link v-bind:to="{name: 'AppealDetail',params:{id: current.OrganizationorgID}}">
@@ -128,7 +137,10 @@
             Cookies.remove('toDate');
             Cookies.remove('appealID');
             Cookies.remove('description');
+<<<<<<< HEAD
             Cookies.remove('orgName');
+=======
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
             
             axios.get('/loginCheck')
                 .then(response => {

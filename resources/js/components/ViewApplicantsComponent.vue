@@ -11,7 +11,11 @@
                         </div>
                     </div>
                     <div class="row mb-5">
+<<<<<<< HEAD
                         <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(applicant) in applicants" :key=applicant>
+=======
+                        <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(applicant,index) in applicants" :key=applicant>
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="card-header">
                                     <h4>{{applicant.IDno}}</h4>
@@ -26,7 +30,28 @@
                             <div class="card">
                                 <div class="card-body mb-4">
                                     <div class="text-center mt-5 mb-4">
+<<<<<<< HEAD
                                         <router-link v-bind:to="{name: 'NewApplicant',params:{name: this.orgName}}">
+=======
+<<<<<<< HEAD
+                                        <router-link v-bind:to="{name: 'NewApplicant',params:{name: this.orgName}}">
+=======
+<<<<<<< HEAD
+                                        <router-link v-bind:to="{name: 'NewApplicant',params:{name: this.orgName}}">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                        <router-link v-bind:to="{name: 'NewApplicant',params:{name: this.orgName}}">
+=======
+                                        <router-link v-bind:to="{name: 'NewApplicant',params:{name: this.orgName, id: this.orgID}}">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                                        <router-link v-bind:to="{name: 'NewApplicant',params:{name: this.orgName, id: this.orgID}}">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
                                             <a href="#" class="btn btn-primary">Add Applicant</a>
                                         </router-link>
                                     </div>
@@ -56,6 +81,7 @@
                 applicants: [],
                 _menues: [
                     {
+<<<<<<< HEAD
                         name: "Register Applicants",
                         short: "Applicant",
                         icon: "<i class='fas fa-calendar-alt'></i>",
@@ -77,11 +103,71 @@
                 ],
                 orgID : "",
                 orgName : ""
+=======
+                        name: "RegisterApplicants",
+<<<<<<< HEAD
+                        short: "Applicant",
+=======
+<<<<<<< HEAD
+                        short: "Applicant",
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        short: "Applicant",
+=======
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+                        link: "ManageOrg"
+                    }
+
+                ],
+<<<<<<< HEAD
+                orgID : "",
+                orgName : ""
+=======
+<<<<<<< HEAD
+                orgID : "",
+                orgName : ""
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                orgID : "",
+                orgName : ""
+=======
+                orgID : "OR001",
+                orgName : "Organization A"
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                orgID : "OR001",
+                orgName : "Organization A"
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
             }
         },
         components: {
             'sidebar-component' : SidebarComponent
         },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
         created: function() {
 
             
@@ -112,6 +198,32 @@
                         this.applicants = response.data;
                 });
             }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+        
+        created() {
+                axios.get('/getApplicant',this.orgID)
+                .then(response => {
+                    this.applicants = response.data;
+                    console.log(response.data)
+                });
+        },
+        methods: {
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
         }
     }
 
