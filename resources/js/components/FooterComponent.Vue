@@ -65,13 +65,13 @@
             return {
                 maplist : [
                     {
-                        link: "<a href='#' class='text-white text-decoration-none'>Manage Organization1</a>"
+                        link: "<a href='#' class='text-white text-decoration-none'>Manage Organization</a>"
                     },
                     {
-                        link: "<a href='#' class='text-white text-decoration-none'>Refister Applicant</a>"
+                        link: "<a href='#' class='text-white text-decoration-none'>Register Applicant</a>"
                     },
                     {
-                        link: "<a href='#' class='text-white text-decoration-none'>Organiza Aid Appeal</a>"
+                        link: "<a href='#' class='text-white text-decoration-none'>Organize Aid Appeal</a>"
                     },
                     {
                         link: "<a href='#' class='text-white text-decoration-none'>Record Contribution</a>"

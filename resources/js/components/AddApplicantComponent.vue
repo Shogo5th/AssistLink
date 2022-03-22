@@ -7,7 +7,7 @@
                 <div class="container-fluid" id="box">
                     <div class="row mb-3">
                         <div class="col-md-12 text-center">
-                            <h3>Record a Organization Representative</h3>
+                            <h3>Add an Applicant</h3>
                             <h5>For {{$route.params.name}}</h5>
                         </div>
                     </div>
@@ -22,48 +22,40 @@
                                     </div> 
                                     <form class="p-3" v-on:submit.prevent="checkValidation">
                                         <div class="form-row my-5">
-                                            <div class="col-lg-12">
-                                                <label class="form-label required">Username</label>
-                                                <input required text="Enter enter between 6 and 15 single-byte alphanumeric characters." 
-                                                type="text" class="form-control" placeholder="Username" name="username">
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="form-row my-5">
                                             <div class="col-lg-6 mb-3">
                                                 <label class="form-label required">Full Name</label>
                                                 <input required pattern=.*\S+.* title="Enter Firstname without space." type="text" class="form-control" placeholder="First Name" name="firstname">
                                             </div>
                                             <div class="col-lg-6">
-                                                <input type="text" required pattern=.*\S+.* title="tEnter Lastname without space." class="form-control" placeholder="Last Name" name="lastname">
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="form-row my-5">
-                                            <div class="col-lg-12">
-                                               <label class="form-label required">Mobile Number</label>
-                                                <input required pattern="\d{2,4}-?\d{2,4}-?\d{3,4}" type="tel" class="form-control" placeholder="mobile No" name="mobileNo">
+                                                <input type="text" required pattern=.*\S+.* title="Enter Lastname without space." class="form-control" placeholder="Last Name" name="lastname">
                                             </div>
                                         </div>
                                         <div class="form-row my-5">
                                             <div class="col-lg-12">
-                                               <label class="form-label required">Email</label>
-                                                <input required type="email" pattern = "[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" placeholder="Email" name="email">
+                                                <label class="form-label required">IDno</label>
+                                                <input required pattern="^([a-zA-Z0-9]{6,15})$" 
+                                                title="Enter enter between 6 and 15 single-byte alphanumeric characters." 
+                                                type="text" class="form-control" placeholder="IDno" name="IDno">
                                             </div>
                                         </div>
-                            
-                                        <div class="form-row my-5 pb-5">
-                                            <div class="col-lg-12">
-                                              <label class="form-label required">Job Title</label>
-                                            <input required pattern="^([a-zA-Z0-9]{1,20})$" title="Enter less than 20 characters" type="text" class="form-control" placeholder="Job Title" name="jobTitle">
+                                        <div class="form-row my-5">
+                                            <div class="col-lg-12 mb-3">
+                                                <label class="form-label required">Address</label>
+                                                <input required type="text" class="form-control" placeholder="Address" name="address">
                                             </div>
                                         </div>
-
+                                        <div class="form-row my-5">
+                                            <div class="col-lg-12 mb-3">
+                                                <label class="form-label required">Household Income</label>
+                                                <input required pattern="^([1-9]\d*|0)(\.\d+)?$" type="text" class="form-control" placeholder="household income" name="householdIncome"
+                                                title="Enter positive number">
+                                            </div>
+                                        </div>
                                         <div class="text-center mt-3 mb-3">
-                                            <button type="submit" class="btn btn-lg btn-outline-primary mb-3">Confirm</button>
+                                            <button type="submit" class="btn btn-lg btn-outline-primary mb-3">Continue</button>
                                         </div>
                                          <div class="text-center mt-3 mb-3">
-                                            <router-link v-bind:to="{name: 'ManageOrg'}">
+                                            <router-link v-bind:to="{name: 'viewApplicants'}">
                                                 <button type="button" class="btn btn-lg btn-outline-danger">Cancel</button>
                                             </router-link>          
                                         </div>
@@ -88,11 +80,10 @@
                             <h4 class="modal-title text-center">Are you sure to submit?</h4>
                             <div class="mt-3">
                                 <ul>
-                                    <li>Username: {{username}}</li>
+                                    <li>IDno: {{IDno}}</li>
                                     <li>Fullname: {{fullname}}</li>
-                                    <li>Mobile No: {{mobileNo}}</li>
-                                    <li>Email: {{email}}</li>
-                                    <li>Job Title: {{jobTitle}}</li>
+                                    <li>Address: {{address}}</li>
+                                    <li>Household Income: {{householdIncome}}</li>
                                 </ul>
                             </div> 
                         </div>
@@ -113,12 +104,12 @@
                            <h4 class="modal-title text-center">Success</h4>
                         </div>
                         <div class="modal-body">
-                            <p>The new Organization Representative account is successfully created.</p>
-                            <p>The default password was sent to the email address</p>
+                            <p>The new Applicant account is successfully created.</p>
+                            <p>The username and default password were generated</p>
                         </div>
                         <div class="modal-footer justify-content-center mt-3 mb-3">
-                            <router-link v-bind:to="{name: 'ManageOrg'}">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" v-on:click="closeThankyouModal">OK</button>
+                            <router-link v-bind:to="{name: 'uploadDocument'}">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" v-on:click="closeThankyouModal">Continue</button>
                             </router-link>
                         </div>
                     </div>
@@ -139,20 +130,33 @@
             return {
                 _menues: [
                     {
-                        name: "Manage Organization",
-                        short: "Organization",
+                        name: "Register Applicant",
+                        short: "Applicant",
                         icon: "<i class='fas fa-calendar-alt'></i>",
-                        link: "ManageOrg"
+                        link: "viewApplicants"
+                    },
+                    {
+                        name: "Organize Aid Appeal",
+                        short: "Appeal",
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+                        link: "organizeAidAppeal"
+                    },
+                    {
+                        name: "Record Contribution",
+                        short: "Contribution",
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+                        link: "recordContribution"
                     }
 
                 ],
 
-                username: "",
+                address: "",
                 fullname: "",
-                mobileNo: "", 
-                email: "",
-                orgID: this.$route.params.id,
-                jobTitle:"",
+                IDno: "", 
+                householdIncome: "",
+                orgID: "",
+                orgName:"",
+                username: "",
                 
                 allerros: [],
                 success : false
@@ -164,18 +168,21 @@
             'sidebar-component' : SidebarComponent
         },
         created: function() {
-   
+
             axios.get('/loginCheck')
                 .then(response => {
 
                     if(response.data == 'none') {
                             this.$router.push({
-                            name: 'Home', 
+                            name: 'Home'
                         });
-                    }else if(response.data != 'admin'){
+                    }else if(response.data == 'admin'){
                         this.$router.push({
-                            name: 'OrganizationRep', 
+                            name: 'Admin'
                         });
+                    }else {
+                        this.orgName = response.data['orgName'];
+                        this.orgID = response.data['orgID'];
                     }
             });
 
@@ -183,21 +190,20 @@
         },
         methods: {
                 checkValidation(event) {
-                        const {username,firstname,lastname,mobileNo,email,jobTitle} = Object.fromEntries(new FormData(event.target));
-                        this.username = username;
+                        const {firstname,lastname,address,IDno,householdIncome} = Object.fromEntries(new FormData(event.target));
                         this.fullname = firstname.toUpperCase() + " " + lastname.toUpperCase();
-                        this.mobileNo = mobileNo;
-                        this.email = email;
-                        this.jobTitle = jobTitle
+                        this.IDno = IDno;
+                        this.address = address;
+                        this.householdIncome = householdIncome;
 
                         const data = {
-                            username: this.username,
                             fullname: this.fullname,
                             mobileNo: this.mobileNo,
                             email: this.email,
+                            IDno: this.IDno
                         }
 
-                        axios.post('/adduser/validate',data).then( response => {
+                        axios.post('/addApplicant/validate',data).then( response => {
                         this.allerros = [];
                         this.success = true;
 
@@ -208,28 +214,40 @@
                         this.allerros = error.response.data.errors;
                         this.success = false;
 
-                        alert("Error! This username is already exist!");
+                        alert("Error! This IDno is already exist!");
                     });
                 },
                 async submit() {
-                    const newUser = {
-                        username: this.username,
-                        fullname: this.fullname,
-                        mobileNo: this.mobileNo,
-                        email: this.email
-                    }
+                    
+                    /* create usernmae */
+                    var strong = 1000;
+                    var newUsername =  new Date().getTime().toString(6)  + Math.floor(strong*Math.random()).toString(6)
+                    this.username = newUsername;
+                    
 
-                    const newOrgRep = {
-                        orgID: this.orgID,
-                        jobTitle: this.jobTitle,
-                        username: this.username,
+                    const newUser = {
+                        fullname: this.fullname,
+                        username: newUsername,
+                        OrganizationorgID: this.orgID,
+                        Userusername : this.username
                     }
-                    console.log(this.orgID);
-                    await axios.post('/adduser',newUser)
-                    await axios.post('/addorgrep',newOrgRep)
+                    await axios.post('/adduser/applicant',newUser)
+
+                    const newApplicant = {
+                        IDno: this.IDno,
+                        address: this.address,
+                        householdIncome: this.householdIncome,
+                        username: this.username,
+                        orgID: this.orgID
+                    }
+                    
+                    await axios.post('/addApplicant',newApplicant)
+
+                    // hide confirm modal
                     const closeConfirmModal = bootstrap.Modal.getInstance(confirmModal);
                     await closeConfirmModal.hide();
 
+                    // show thankyou modal to notify user new applicant was created 
                     const thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'),{})
                     await thankyouModal.show();
 

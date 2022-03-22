@@ -37,4 +37,20 @@ class UserController extends Controller
 
         $user->save();
     }
+
+    public function addUserApplicant(Request $request) {
+
+        $user = new User;
+        $user->username = $request->username;
+        $user->password = substr(bin2hex(random_bytes(12)), 0, 12);
+        $user->fullname = $request->fullname;
+
+        $user->save();
+    }
+
+    public function logout() {
+
+        session()->flush();
+    }
+    
 }
