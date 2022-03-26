@@ -10,7 +10,7 @@
 
                 <!--Grid column-->
                 <div class="col-md-8 col-lg-6 col-xl-6 mx-auto mb-4">
-                    <h2>Site Map</h2>
+                    <h2>Navigation</h2>
 
                     <ul class="list-unstyled mb-0">
                         <li  v-for="(list,index) in maplist">
@@ -23,7 +23,7 @@
                 <!--Grid column-->
                 <div class="col-md-4 col-lg-6 col-xl-6 mx-auto mb-4">
 
-                <img src="../../../../public/images/samplelogo.png" alt="logo" class="align-middle">
+                <img src="../../../../public/images/contactusicon.png" alt="logo" class="align-middle">
 
                 <h5 class="mt-3">Contact Information</h5>
 
@@ -31,11 +31,11 @@
                 <tbody>
                     <tr>
                     <td>Email</td>
-                    <td>AssistLink@mail.com</td>
+                    <td>assistlink@help.linkcommunity</td>
                     </tr>
                     <tr>
                     <td>Phone</td>
-                    <td>000-000-000</td>
+                    <td>number:+60 12046328</td>
                     </tr>
                 </tbody>
                 </table>

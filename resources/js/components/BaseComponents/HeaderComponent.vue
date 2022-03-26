@@ -1,9 +1,14 @@
 <template>
   <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <div class="container">
+    <div class="container ">
       <div class="col-md-10 col-sm-8 col-xs-6 order-1 flex-nowrap">
-        <a class="navbar-logo " href="#"><img src="../../../../public/images/samplelogo.png" alt="logo" id="brand-logo" v-if="width>=350"></a>
-        <a class="navbar-title" href="#">Assist Link</a>
+        <router-link v-bind:to="{name: 'Home'}">
+          <a class="navbar-logo " href="#"><img src="../../../../public/images/AssistLink-logos.jpeg" alt="logo" id="brand-logo" v-if="width>=350"></a>
+        </router-link>
+        
+        <router-link v-bind:to="{name: 'Home'}">
+          <a class="navbar-title" href="#">Assist Link</a>
+        </router-link>
       </div>
       
       <div class="col-md-2 col-sm-2 col-xs-3 order-2">
@@ -12,14 +17,14 @@
       
       <div class="col-sm-2 col-xs-3 order-3">
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#Navbar" 
-        aria-controls="Navbar" aria-expanded="false" aria-label="switch navigation" v-if="width<768">
+        aria-controls="Navbar" aria-expanded="false" aria-label="switch navigation" v-if="width<768 && navFlag === true">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
 
       <div class="collapse navbar-collapse" id="Navbar">
-        <ul class="navbar-nav me-auto mt-2 mt-md-0" v-show="width<768">
-          <li class="nav-item" v-for="(item,index) in navigation">
+        <ul class="navbar-nav me-auto mt-2 mt-md-0" v-show="width<768 && navFlag === true">
+          <li class="nav-item" v-for="(item) in navigation" :key=item>
             <a class="nav-link" v-bind:href="item.num">{{item.title}}</a>
           </li>
         </ul>
@@ -28,9 +33,9 @@
   </nav>
 
 
-  <div class="nav-scroller py-1 mb-2" v-if="width>=768">
+  <div class="nav-scroller py-1 mb-2 bg-light" v-if="width>=768 && navFlag === true">
     <nav class="nav d-flex justify-content-around">
-      <a class="p-2 link-secondary" v-bind:href="item.num" v-for="(item,index) in navigation">{{item.title}}</a>
+      <a class="p-2 link-secondary" v-bind:href="item.num" v-for="(item) in navigation" :key=item>{{item.title}}</a>
     </nav>
   </div>
 
@@ -45,21 +50,19 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                      <form>
+                      <form v-on:submit.prevent="login">
                         <div class="mb-3">
-                          <label class="form-label required">Name</label>
-                          <input type="text" class="form-control">
+                          <label class="form-label required">Username</label>
+                          <input type="text" class="form-control" name="username">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label required">Email</label>
-                          <input type="email" class="form-control">
+                          <label class="form-label required">Password</label>
+                          <input type="password" class="form-control" name="password">
                         </div>
+                        <div class="modal-footer justify-content-center">
+                          <button type="submit" class="btn btn-primary">Login</button>
+                        </div> 
                       </form>
-                    </div>
-                    <div class="modal-footer justify-content-center">
-                      <router-link v-bind:to="{name: 'Admin'}">
-                        <button type="submit" class="btn btn-primary" v-on:click="login()">Login</button>
-                      </router-link>
                     </div>
                 </div>
             </div>
@@ -70,32 +73,46 @@
  
  <script>
  import LoginFormComponent from '../BaseComponents/LoginFormComponent'
+ import axios from 'axios'
+ import Router from 'vue-router'
+
     export default {
+        props: ['navFlag'],
         data () {
           return {
             navigation: [
               {
                 title: "Welcome",
-                num: "#content1"
+                num: "#imageslide"
               },
               {
                 title: "About Us",
-                num: "#content2"
+                num: "#AboutUs"
+              },
+              {
+                title: "Register",
+                num: "#SelfRegister"
+              },
+              {
+                title: "Contribution",
+                num: "#Contribution"
               },
               {
                 title: "FAQ",
-                num: "#content3"
+                num: "#FAQ"
               },
               {
                 title: "Sponsors",
-                num: "#content4"
+                num: "#Sponsors"
               },
               {
                 title: "Site Map",
                 num: "#footer"
               }
            ],
-           width: window.innerWidth
+           width: window.innerWidth,
+           usesrname: "",
+           password: "",
          }
        },
 
@@ -111,8 +128,46 @@
             loginModal.show()
         },
         login() {
-            const modal = bootstrap.Modal.getInstance(loginModal)
-            modal.hide()
+
+          const {username,password} = Object.fromEntries(new FormData(event.target));
+          this.username = username;
+          this.password = password;
+
+          const check = {
+            username: this.username,
+            password: this.password
+          }
+
+
+          axios.post('/loginOrgRep',check).then(response => {
+                    
+            console.log(response.data);
+            if(response.data == 1) {
+              const modal = bootstrap.Modal.getInstance(loginModal)
+              modal.hide()
+              
+              this.$router.push({
+                name: 'Admin', 
+              });
+              
+            }else if(response.data == 2){
+
+              const modal = bootstrap.Modal.getInstance(loginModal)
+              modal.hide()
+            
+              this.$router.push({
+                name: 'OrganizationRep', 
+              });
+
+            }else if(response.data == 3) {
+              alert("Applicant account is not available");
+              return null;
+            }else {
+              alert("username and password are wrong !");
+              return null;
+            }
+          });
+
         }
       },
       mounted: function() {
@@ -157,21 +212,22 @@
   }
 
 
-\* For responsive header*\
-@media screen and (max-width: 576px) {
-  .navbar-title{
-    font-size: 16px;  
-  }
-  #brand-logo {
-    width: 10px;
-    height: 10px;
-  }
-  .btn {
-    font-size:25px;
-    padding:4px 6px;
-  }
+  //For responsive header
+  @media screen and (max-width: 576px) {
+    .navbar-title{
+      font-size: 16px;  
+    }
 
-}
+    #brand-logo {
+      width: 10px;
+      height: 10px;
+    }
+    .btn {
+      font-size:25px;
+      padding:4px 6px;
+    }
+
+  }
 
  @media screen and (min-width: 577px) and (max-width: 767px) {
     .navbar-title{

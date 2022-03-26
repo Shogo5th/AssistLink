@@ -13,7 +13,7 @@
                     </div>
                     <div class="row mb-5">
                         <div class="col-lg-6 order-md-1  mx-auto">
-                            <div class="card formCard">
+                            <div class="card formCard shadow">
                                 <div class="card-body mb-3">
                                     <div class="row">
                                         <div class="col-lg-12 text-center">
@@ -24,7 +24,7 @@
                                         <div class="form-row my-5">
                                             <div class="col-lg-12">
                                                 <label class="form-label required">Username</label>
-                                                <input required pattern="^([a-zA-Z0-9]{6,15})$" oninvalid="this.setCustomValidity('Enter enter between 6 and 15 single-byte alphanumeric characters.')" 
+                                                <input required text="Enter enter between 6 and 15 single-byte alphanumeric characters." 
                                                 type="text" class="form-control" placeholder="Username" name="username">
                                             </div>
                                         </div>
@@ -32,30 +32,30 @@
                                         <div class="form-row my-5">
                                             <div class="col-lg-6 mb-3">
                                                 <label class="form-label required">Full Name</label>
-                                                <input required pattern=.*\S+.* oninvalid="this.setCustomValidity('Enter Firstname without space.')" type="text" class="form-control" placeholder="First Name" name="firstname">
+                                                <input required pattern=.*\S+.* title="Enter Firstname without space." type="text" class="form-control" placeholder="First Name" name="firstname">
                                             </div>
                                             <div class="col-lg-6">
-                                                <input type="text" required pattern=.*\S+.* oninvalid="this.setCustomValidity('Enter Lastname without space.')" class="form-control" placeholder="Last Name" name="lastname">
+                                                <input type="text" required pattern=.*\S+.* title="tEnter Lastname without space." class="form-control" placeholder="Last Name" name="lastname">
                                             </div>
                                         </div>
                                         
                                         <div class="form-row my-5">
                                             <div class="col-lg-12">
                                                <label class="form-label required">Mobile Number</label>
-                                                <input required pattern="\d{2,4}-?\d{2,4}-?\d{3,4}" type="text" class="form-control" placeholder="mobile No" name="mobileNo">
+                                                <input required pattern="\d{2,4}-?\d{2,4}-?\d{3,4}" type="tel" class="form-control" placeholder="mobile No" name="mobileNo">
                                             </div>
                                         </div>
                                         <div class="form-row my-5">
                                             <div class="col-lg-12">
                                                <label class="form-label required">Email</label>
-                                                <input required type="text" pattern = "[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" placeholder="Email" name="email">
+                                                <input required type="email" pattern = "[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" placeholder="Email" name="email">
                                             </div>
                                         </div>
                             
                                         <div class="form-row my-5 pb-5">
                                             <div class="col-lg-12">
                                               <label class="form-label required">Job Title</label>
-                                            <input required pattern="^([a-zA-Z0-9]{1,20})$" oninvalid="this.setCustomValidity('Enter less than 20 characters')" type="text" class="form-control" placeholder="Job Title" name="jobTitle">
+                                            <input required pattern="^([a-zA-Z0-9]{1,20})$" title="Enter less than 20 characters" type="text" class="form-control" placeholder="Job Title" name="jobTitle">
                                             </div>
                                         </div>
 
@@ -81,7 +81,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Log out</h4>
+                            <h4 class="modal-title">Confirmation</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
@@ -140,7 +140,8 @@
                 _menues: [
                     {
                         name: "Manage Organization",
-                        icon: "<i class='fas fa-calendar-alt'></i>",
+                        short: "Organization",
+                        icon: "<i class='fa-solid fa-building-ngo'></i>",
                         link: "ManageOrg"
                     }
 
@@ -161,6 +162,24 @@
         },
         components: {
             'sidebar-component' : SidebarComponent
+        },
+        created: function() {
+   
+            axios.get('/loginCheck')
+                .then(response => {
+
+                    if(response.data == 'none') {
+                            this.$router.push({
+                            name: 'Home', 
+                        });
+                    }else if(response.data != 'admin'){
+                        this.$router.push({
+                            name: 'OrganizationRep', 
+                        });
+                    }
+            });
+
+        
         },
         methods: {
                 checkValidation(event) {

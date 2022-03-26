@@ -12,7 +12,7 @@
                     </div>
                     <div class="row mb-5">
                         <div class="col-lg-6 order-md-1  mx-auto">
-                            <div class="card formCard">
+                            <div class="card formCard shadow">
                                 <div class="card-body mb-3">
                                     <div class="row">
                                         <div class="col-lg-12 text-center">
@@ -23,7 +23,7 @@
                                         <div class="form-row my-5">
                                             <div class="col-lg-12">
                                                 <label class="form-label required">Organization Name</label>
-                                                <input required pattern="^([a-zA-Z0-9]{6,30})$" oninvalid="this.setCustomValidity('Enter enter between 6 and 15 single-byte alphanumeric characters.')" 
+                                                <input required  
                                                 type="text" class="form-control" placeholder="Organization name" name="orgName">
                                             </div>
                                         </div>
@@ -57,7 +57,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Log out</h4>
+                            <h4 class="modal-title">Confirmation</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
@@ -112,7 +112,8 @@
                 _menues: [
                     {
                         name: "Manage Organization",
-                        icon: "<i class='fas fa-calendar-alt'></i>",
+                        short: "Organization",
+                        icon: "<i class='fa-solid fa-building-ngo'></i>",
                         link: "ManageOrg"
                     }
 
@@ -124,6 +125,24 @@
         },
         components: {
             'sidebar-component' : SidebarComponent
+        },
+        created: function() {
+   
+            axios.get('/loginCheck')
+                .then(response => {
+
+                    if(response.data == 'none') {
+                            this.$router.push({
+                            name: 'Home', 
+                        });
+                    }else if(response.data != 'admin'){
+                        this.$router.push({
+                            name: 'OrganizationRep', 
+                        });
+                    }
+            });
+
+        
         },
         methods: {
                 confirm(event) {
