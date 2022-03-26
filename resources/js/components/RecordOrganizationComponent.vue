@@ -23,7 +23,11 @@
                                         <div class="form-row my-5">
                                             <div class="col-lg-12">
                                                 <label class="form-label required">Organization Name</label>
+<<<<<<< HEAD
                                                 <input required  
+=======
+                                                <input required pattern="^([a-zA-Z0-9\s]{6,30})$" title="Enter enter between 6 and 15 single-byte alphanumeric characters." 
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                                                 type="text" class="form-control" placeholder="Organization name" name="orgName">
                                             </div>
                                         </div>
@@ -113,7 +117,11 @@
                     {
                         name: "Manage Organization",
                         short: "Organization",
+<<<<<<< HEAD
                         icon: "<i class='fa-solid fa-building-ngo'></i>",
+=======
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                         link: "ManageOrg"
                     }
 

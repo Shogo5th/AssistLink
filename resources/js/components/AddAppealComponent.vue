@@ -13,7 +13,11 @@
                     </div>
                     <div class="row mb-5">
                         <div class="col-lg-6 order-md-1  mx-auto">
+<<<<<<< HEAD
                             <div class="card formCard shadow">
+=======
+                            <div class="card formCard">
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                                 <div class="card-body mb-3">
                                     <div class="row">
                                         <div class="col-lg-12 text-center">
@@ -38,6 +42,12 @@
                                             <div class="col-lg-12">
                                                 <label class="form-label required">Description</label>
                                                 <textarea rows="10" cols="60" required class="form-control" placeholder="Description" name="description"></textarea>
+<<<<<<< HEAD
+=======
+                                                
+                                                <!-- <p class="help-block">※Write in 100 words</p> -->
+
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                                             </div>
                                         </div>
                                         <div class="text-center mt-3 mb-3">
@@ -93,7 +103,11 @@
                         </div>
                         <div class="modal-body">
                             <p>The new Appeal was successfully created.</p>
+<<<<<<< HEAD
                             <p>The appealID was automatically generated</p>
+=======
+                            <p>TThe appealID was automatically generated</p>
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                         </div>
                         <div class="modal-footer justify-content-center mt-3 mb-3">
                             <router-link v-bind:to="{name: 'organizeAidAppeal'}">
@@ -120,18 +134,29 @@
                     {
                         name: "Register Applicant",
                         short: "Applicant",
+<<<<<<< HEAD
                         icon: "<i class='fa-regular fa-address-card'></i>",
                         link: "viewApplicants"
+=======
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+                        link: "viewApplicants"
+<<<<<<< HEAD
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                     },
                     {
                         name: "Organize Aid Appeal",
                         short: "Appeal",
+<<<<<<< HEAD
                         icon: "<i class='fa-solid fa-heart-circle-plus'></i>",
+=======
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                         link: "organizeAidAppeal"
                     },
                     {
                         name: "Record Contribution",
                         short: "Contribution",
+<<<<<<< HEAD
                         icon: "<i class='fa-regular fa-handshake'></i>",
                         link: "recordContribution"
                     },
@@ -140,6 +165,12 @@
                         short: "Disbursement",
                         icon: "<i class='fa-solid fa-hand-holding-heart'></i>",
                         link: "recordAidDisbursement"
+=======
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+                        link: "recordContribution"
+=======
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                     }
 
                 ],

@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contribution;
+<<<<<<< HEAD
 use App\Models\searchCashDonation;
 use App\Models\Good;
+=======
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
 use DateTime;
 
 class ContributionController extends Controller
@@ -17,6 +20,7 @@ class ContributionController extends Controller
         $contribution->contributionID = $request->contributionID;
         $contribution->AppealOrganizationorgID = $request->orgID;
         $contribution->AppealappealID = $request->appealID;
+<<<<<<< HEAD
         $contribution->receivedDate = new Datetime();
 
         $contribution->save();
@@ -39,4 +43,10 @@ class ContributionController extends Controller
         return $goods; 
 ;
     }
+=======
+        $contribution->receviedDtate = new Datetime();
+
+        $contribution->save();
+    }
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
 }

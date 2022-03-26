@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
 <header-component v-bind:navFlag="false"></header-component>
+=======
+<header-component></header-component>
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
 <!-- Form Card -->
     <div class="py-4">
         <section>
@@ -12,7 +16,11 @@
                 </div>
                 <div class="row mb-5">
                     <div class="col-lg-6 order-md-1  mx-auto">
+<<<<<<< HEAD
                         <div class="card formCard shadow">
+=======
+                        <div class="card formCard">
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                             <div class="card-body mb-3">
                                 <div class="row">
                                     <div class="col-lg-12 text-center">
@@ -23,17 +31,82 @@
                                     <div class="form-row my-5">
                                         <div class="col-lg-6 mb-3">
                                             <label class="form-label required">Full Name</label>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                                             <input required pattern=.*\S+.* title="Enter Firstname without space." type="text" class="form-control" placeholder="First Name" name="firstname">
                                         </div>
                                         <div class="col-lg-6">
                                             <input type="text" required pattern=.*\S+.* title="Enter Lastname without space." class="form-control" placeholder="Last Name" name="lastname">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                                            <input required pattern=.*\S+.* oninvalid="this.setCustomValidity('Enter Firstname without space.')" type="text" class="form-control" placeholder="First Name" name="firstname">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" required pattern=.*\S+.* oninvalid="this.setCustomValidity('Enter Lastname without space.')" class="form-control" placeholder="Last Name" name="lastname">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                                         </div>
                                     </div>
                                     <div class="form-row my-5">
                                         <div class="col-lg-12">
                                             <label class="form-label required">IDno</label>
                                             <input required pattern="^([a-zA-Z0-9]{6,15})$" 
+<<<<<<< HEAD
                                             title="Enter enter between 6 and 15 single-byte alphanumeric characters without space." 
+=======
+<<<<<<< HEAD
+                                            title="Enter enter between 6 and 15 single-byte alphanumeric characters without space." 
+=======
+<<<<<<< HEAD
+                                            title="Enter enter between 6 and 15 single-byte alphanumeric characters without space." 
+=======
+<<<<<<< HEAD
+                                            title="Enter enter between 6 and 15 single-byte alphanumeric characters without space." 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                            title="Enter enter between 6 and 15 single-byte alphanumeric characters without space." 
+=======
+                                            oninvalid="this.setCustomValidity('Enter enter between 6 and 15 single-byte alphanumeric characters.')" 
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                                            oninvalid="this.setCustomValidity('Enter enter between 6 and 15 single-byte alphanumeric characters.')" 
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                                             type="text" class="form-control" placeholder="IDno" name="IDno">
                                         </div>
                                     </div>
@@ -47,14 +120,64 @@
                                         <div class="col-lg-12 mb-3">
                                             <label class="form-label required">Household Income</label>
                                             <input required pattern="^([1-9]\d*|0)(\.\d+)?$" type="text" class="form-control" placeholder="household income" name="householdIncome"
+<<<<<<< HEAD
                                             title="Enter positive number">
+=======
+<<<<<<< HEAD
+                                            title="Enter positive number">
+=======
+<<<<<<< HEAD
+                                            title="Enter positive number">
+=======
+<<<<<<< HEAD
+                                            title="Enter positive number">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                            title="Enter positive number">
+=======
+                                            oninvalid="this.setCustomValidity('Enter positive number')">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                                            oninvalid="this.setCustomValidity('Enter positive number')">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                                         </div>
                                     </div>
                                     <div class="text-center mt-3 mb-3">
                                         <button type="submit" class="btn btn-lg btn-outline-primary mb-3">Continue</button>
                                     </div>
                                         <div class="text-center mt-3 mb-3">
+<<<<<<< HEAD
                                         <router-link v-bind:to="{name: 'Home'}">
+=======
+<<<<<<< HEAD
+                                        <router-link v-bind:to="{name: 'Home'}">
+=======
+<<<<<<< HEAD
+                                        <router-link v-bind:to="{name: 'Home'}">
+=======
+<<<<<<< HEAD
+                                        <router-link v-bind:to="{name: 'Home'}">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                        <router-link v-bind:to="{name: 'Home'}">
+=======
+                                        <router-link v-bind:to="{name: 'viewApplicants'}">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                                        <router-link v-bind:to="{name: 'viewApplicants'}">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                                             <button type="button" class="btn btn-lg btn-outline-danger">Cancel</button>
                                         </router-link>          
                                     </div>
@@ -73,7 +196,32 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
+<<<<<<< HEAD
                         <h4 class="modal-title">Confirmation</h4>
+=======
+<<<<<<< HEAD
+                        <h4 class="modal-title">Confirmation</h4>
+=======
+<<<<<<< HEAD
+                        <h4 class="modal-title">Confirmation</h4>
+=======
+<<<<<<< HEAD
+                        <h4 class="modal-title">Confirmation</h4>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        <h4 class="modal-title">Confirmation</h4>
+=======
+                        <h4 class="modal-title">Log out</h4>
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                        <h4 class="modal-title">Log out</h4>
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
@@ -127,6 +275,37 @@
     export default {
         data: function() {
             return {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+                _menues: [
+                    {
+                        name: "Register Applicant",
+<<<<<<< HEAD
+                        short: "Applicant",
+=======
+<<<<<<< HEAD
+                        short: "Applicant",
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        short: "Applicant",
+=======
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+                        link: "viewApplicants"
+                    }
+
+                ],
+
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                 address: "",
                 fullname: "",
                 IDno: "", 
@@ -177,12 +356,25 @@
                 async submit() {
                     
                     /* create usernmae */
+<<<<<<< HEAD
                     this.username = this.generateUsername();
                
                     const newUser = {
                         fullname: this.fullname,
                         username: this.username,
                         OrganizationorgID: this.orgID
+=======
+                    var strong = 1000;
+                    var newUsername =  new Date().getTime().toString(6)  + Math.floor(strong*Math.random()).toString(6)
+                    this.username = newUsername;
+                    
+
+                    const newUser = {
+                        fullname: this.fullname,
+                        username: newUsername,
+                        OrganizationorgID: this.orgID,
+                        Userusername : this.username
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                     }
                     await axios.post('/adduser/applicant',newUser)
 
@@ -208,6 +400,7 @@
                 closeThankyouModal() {
                     const closeThankyouModal = bootstrap.Modal.getInstance(thankyouModal)
                     closeThankyouModal.hide()
+<<<<<<< HEAD
                 },
                 generateUsername() {
                     var l = 8;
@@ -218,6 +411,8 @@
                         r+= c[Math.floor(Math.random()*cl)];
                     }
                     return r;
+=======
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                 }
 
 

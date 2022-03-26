@@ -12,7 +12,11 @@
                     </div>
                     <div class="row mb-5">
                         <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(org) in organizations" :key=org>
+<<<<<<< HEAD
                             <div class="card mb-3 shadow" style="max-width: 540px;">
+=======
+                            <div class="card mb-3" style="max-width: 540px;">
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                                 <div class="card-header">
                                     <h4>ID:{{org.orgID}}</h4>
                                 </div>
@@ -62,7 +66,11 @@
                     {
                         name: "Manage Organization",
                         short: "Organization",
+<<<<<<< HEAD
                         icon: "<i class='fa-solid fa-building-ngo'></i>",
+=======
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                         link: "ManageOrg"
                     }
 

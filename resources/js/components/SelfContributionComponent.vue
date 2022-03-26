@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
 <header-component v-bind:navFlag="false"></header-component>
+=======
+<header-component></header-component>
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
     <div class="py-4">
         <section>
             <div class="container-fluid" id="box">
@@ -10,7 +14,11 @@
                 </div>
                 <div class="row mb-5">
                     <div class="col-lg-6 order-md-1  mx-auto">
+<<<<<<< HEAD
                         <div class="card shadow">
+=======
+                        <div class="card">
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                             <div class="card-body mb-3">
                                 <form class="p-3" v-on:submit.prevent="confirm">
                                     <div class="row">

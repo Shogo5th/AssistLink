@@ -13,7 +13,11 @@
                 </div>
                 <div class="row mb-5">
                     <div class="col-lg-6 order-md-1  mx-auto">
+<<<<<<< HEAD
                         <div class="card shadow">
+=======
+                        <div class="card">
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                             <div class="card-body mb-3">
                                 <div class="row">
                                     <div class="col-lg-12 text-center mb-5">
@@ -81,7 +85,11 @@
                                         <button type="submit" class="btn btn-lg btn-outline-primary mb-3">Continue</button>
                                     </div>
                                     <div class="text-center mt-3 mb-3">
+<<<<<<< HEAD
                                         <router-link v-bind:to="{name: 'recordContribution'}">
+=======
+                                        <router-link v-bind:to="{name: 'Home'}">
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                                             <button type="button" class="btn btn-lg btn-outline-danger">Cancel</button>
                                         </router-link>          
                                     </div>
@@ -160,20 +168,31 @@
                 appeals: [],
                 _menues: [
                     {
+<<<<<<< HEAD
                         name: "Register Applicant",
                         short: "Applicant",
                         icon: "<i class='fa-regular fa-address-card'></i>",
+=======
+                        name: "Register Applicants",
+                        short: "Applicant",
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                         link: "viewApplicants"
                     },
                     {
                         name: "Organize Aid Appeal",
                         short: "Appeal",
+<<<<<<< HEAD
                         icon: "<i class='fa-solid fa-heart-circle-plus'></i>",
+=======
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                         link: "organizeAidAppeal"
                     },
                     {
                         name: "Record Contribution",
                         short: "Contribution",
+<<<<<<< HEAD
                         icon: "<i class='fa-regular fa-handshake'></i>",
                         link: "recordContribution"
                     },
@@ -182,6 +201,10 @@
                         short: "Disbursement",
                         icon: "<i class='fa-solid fa-hand-holding-heart'></i>",
                         link: "recordAidDisbursement"
+=======
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+                        link: "recordContribution"
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                     }
 
                 ],
