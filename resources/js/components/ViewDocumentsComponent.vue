@@ -6,6 +6,7 @@
             <section>
                 <div class="container-fluid" id="box">
                     <div class="row mb-3">
+<<<<<<< HEAD
                         
                         <div class="col-md-12 order-md-1  p-2">
                             <h1 class="text-center">Record Aid Disbursement</h1>
@@ -24,6 +25,16 @@
                         </div>
 
                         <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(doc) in documents" :key=doc v-show="!loading">
+=======
+                        <div class="col-md-12 order-md-1  p-2">
+                            <h1 class="text-center">Documents</h1>
+                            <h4 class="text-center">Full Name: {{fullname}}</h4>
+                            <h4 class="text-center">IDno: {{IDno}}</h4>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(doc) in documents" :key=doc>
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                             <div class="card mb-3 shadow" style="max-width: 540px;">
                                 <div class="card-header">
                                     <h4>ID:{{doc.documentID}}</h4>
@@ -38,7 +49,11 @@
                             </div> 
                         </div>
                     </div>
+<<<<<<< HEAD
                     <div class="row text-center" v-show="!loading"> 
+=======
+                    <div class="row text-center"> 
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         <div class="col-lg-12 mt-3 mb-3">
                             <router-link v-bind:to="{name: 'Applicantinfo'}">
                                 <button type="button" class="btn btn-danger">Back</button>
@@ -95,8 +110,12 @@
                 orgID: "",
                 orgName: "",
                 IDno: "",
+<<<<<<< HEAD
                 fullname:"",
                 loading: false
+=======
+                fullname:""
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
 
             }
         },
@@ -118,11 +137,17 @@
                             name: 'Home'
                         });
                     }else if(response.data != 'admin'){
+<<<<<<< HEAD
                         this.loading = true;
                          axios.post('/getDocuments',{'IDno':Cookies.get('IDno')})
                         .then(response => {
                            this.documents = response.data;
                            this.loading = false;
+=======
+                         axios.post('/getDocuments',{'IDno':Cookies.get('IDno')})
+                        .then(response => {
+                           this.documents = response.data;
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         });
 
                     }else {

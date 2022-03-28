@@ -1,7 +1,14 @@
 <template>
-<div>
     <div class="page">
+<<<<<<< HEAD
         <div class="sidebar" id="sidebar">
+=======
+<<<<<<< HEAD
+        <div class="sidebar" id="sidebar">
+=======
+        <div class="sidebar" v-show="width>576">
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             <div class="sidebar-header">
                 <div class="sidebar-logo-container">
                     <div class="logo-container">
@@ -37,6 +44,16 @@
         </div>
         <div class="content">
             <div class="navigationBar mb-3">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+                <button id="sidebarToggle" class="btn sidebarToggle" v-on:click="sidebarToggle" v-show="width<=768 && width>=576">
+                    <img id="toggler" src="../../../../public/images/toggler.png" />
+                </button>
+
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                 <div id="logoutbutton">
                     <a class="btn btn-outline-primary" href="#" v-on:click="openModal()">Log out</a>
                 </div>
@@ -48,30 +65,50 @@
     </div>
 
     <!-- Modal -->
-    <div class="container">
-        <div class="modal fade" id="logoutModal">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Log out</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <h4 class="modal-title">Are you sure to log out?</h4>
-                    </div>
-                    <div class="modal-footer justify-content-center">
-                    <router-link v-bind:to="{name: 'Home'}">
-                        <button type="button" class="btn btn-danger" v-on:click="logout()">Logout</button>
-                    </router-link>
+        <div class="container">
+            <div class="modal fade" id="logoutModal">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Log out</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h4 class="modal-title">Are you sure to log out?</h4>
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                        <router-link v-bind:to="{name: 'Home'}">
+                            <button type="button" class="btn btn-danger" v-on:click="logout()">Logout</button>
+                        </router-link>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 <!-- Modal -->
-</div>
-</template>
 
+   <!-- bottom navbar -->
+    <nav class="navbar navbar-expand fixed-buttom" v-if="width<=576" id="bottom-navbar">
+        <ul class="navbar-nav nav-justified w-100 navbar-dark bg-primary">
+            <li class="nav-item" v-for="(menu, index) in menues" :key="menu" v-bind:menu="menu">
+                <router-link v-bind:to="{name: menu.link}">
+                    <a class="nav-link" href="#">
+                        <div class="row">
+                            <div class="col-2">
+                                <p v-html="menu.icon"></p>
+                            </div>
+                            <div class="col-10 text-white">
+                                {{menu.short}}
+                            </div>
+                        </div>
+                    </a>
+                </router-link>
+            </li>
+        </ul>
+    </nav>
+    <!-- bottom navbar -->
+        
+</template>
  <script>
     import axios from 'axios'
 
@@ -79,10 +116,42 @@
         props: ['menues'],
         data() {
             return {
+<<<<<<< HEAD
 
             }
         },
         methods: {
+=======
+<<<<<<< HEAD
+
+            }
+        },
+        methods: {
+=======
+                width: window.innerWidth,
+                isActive: 1
+            }
+        },
+        methods: {
+            sidebarToggle: function() {
+                let sidebarToggle = document.querySelector(".sidebarToggle");
+                document.querySelector("body").classList.toggle("active");
+                document.getElementById("sidebarToggle").classList.toggle("active");
+                ++this.isActive;
+            },
+            resize: function() {
+                this.width = window.innerWidth;
+                if(this.width <= 768 && this.isActive%2 == 1) {
+                    this.sidebarToggle();
+                    this.isActive = false;
+                }
+                if(this.width > 768 && this.isActive%2 == 0) {
+                    this.sidebarToggle();
+                    this.isActive = true;
+                }
+            },
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             openModal() {
                 var logoutModal = new bootstrap.Modal(document.getElementById('logoutModal'),{})
                 logoutModal.show()
@@ -96,6 +165,21 @@
                 const modal = bootstrap.Modal.getInstance(logoutModal)
                 modal.hide()
             }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+        },
+        mounted: function() {
+            if(this.width <= 768) {
+                this.sidebarToggle();
+            }
+            window.addEventListener('resize', this.resize)
+        },
+        beforeDestroy: function () {
+            window.removeEventListener('resize', this.resize)
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
         }
     }
 
@@ -106,11 +190,27 @@
         body {
             background-color: #e6e6e6;
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
         .page {
             height: 100vh;
             width: 100%;
             display: flex;
             flex-direction: column;
+<<<<<<< HEAD
+=======
+=======
+        .page .sidebar{
+            height:100vh;
+            width:250px;
+            background: blue;
+            position: fixed;
+            top: 0;
+            left: 0;
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
         }
 
         .menu-title {
@@ -147,6 +247,23 @@
             justify-content: space-between;
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+        .sidebarToggle {
+            font-size: 16px;
+            margin-left: -10px;
+            z-index: 999;
+            background: #dcf0ff;
+        }
+
+        .sidebarToggle.active {
+            margin-left: 10px;
+        }
+
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
         .page .content .container{
             margin: 30px;
             background: #fff;
@@ -234,6 +351,10 @@
             margin-left:auto;
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
         #item-icon {
             align-items: center;
             justify-content: center;
@@ -321,4 +442,20 @@
 
     }
         
+<<<<<<< HEAD
+=======
+=======
+        #toggler {
+            width: 25px;
+            height: 20px;
+        }
+       
+       #bottom-navbar {
+            position: fixed;
+            width: 100%;
+            bottom: 0px;
+            z-index: 99;
+       }
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
     </style>

@@ -9,6 +9,7 @@
                         <div class="col-md-12 order-md-1  p-2 text-center">
                             <h1>Record Contribution</h1>
                             <h4>Organization: {{this.orgName}}</h4>
+<<<<<<< HEAD
                             <h4>Select Appeal ID</h4>
                         </div>
                     </div>
@@ -21,16 +22,29 @@
                             </div>
                         </div>
 
+                        <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(appeal) in appeals" :key=appeal v-show="!loading">
+=======
+                        </div>
                     </div>
                     <div class="row mb-5">
-                        <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(appeal) in appeals" :key=appeal v-show="!loading">
-
+                        <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(appeal) in appeals" :key=appeal>
+<<<<<<< HEAD
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                             <div class="card mb-3 shadow" style="max-width: 540px;">
                                 <div class="card-body mb-3">
                                     <h5 class="card-title">ID: {{appeal.appealID}}</h5>
                                     <h5 class="card-title">From: {{appeal.fromDate}}</h5>
                                     <h5 class="card-title">To: {{appeal.toDate}}</h5>
-
+<<<<<<< HEAD
+=======
+=======
+                            <div class="card mb-3" style="max-width: 540px;">
+                                <div class="card-body mb-3">
+                                    <h5 class="card-title">ID:{{appeal.appealID}}</h5>
+                                    <h5 class="card-title">From:{{appeal.fromDate}}</h5>
+                                    <h5 class="card-title">To:{{appeal.toDate}}</h5>
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                     <router-link v-bind:to="{name: 'NewContribution'}">
                                          <a href="#" class="btn btn-primary" v-on:click="setCookie(appeal.appealID,appeal.fromDate,appeal.toDate)">Record Contribution</a>
                                     </router-link>
@@ -60,21 +74,44 @@
                 appeals: [],
                 _menues: [
                     {
-
+<<<<<<< HEAD
                         name: "Register Applicant",
                         short: "Applicant",
                         icon: "<i class='fa-regular fa-address-card'></i>",
+=======
+<<<<<<< HEAD
+                        name: "Register Applicant",
+                        short: "Applicant",
+                        icon: "<i class='fa-regular fa-address-card'></i>",
+=======
+                        name: "Register Applicants",
+                        short: "Applicant",
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         link: "viewApplicants"
                     },
                     {
                         name: "Organize Aid Appeal",
                         short: "Appeal",
+<<<<<<< HEAD
                         icon: "<i class='fa-solid fa-heart-circle-plus'></i>",
+=======
+<<<<<<< HEAD
+                        icon: "<i class='fa-solid fa-heart-circle-plus'></i>",
+=======
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         link: "organizeAidAppeal"
                     },
                     {
                         name: "Record Contribution",
                         short: "Contribution",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         icon: "<i class='fa-regular fa-handshake'></i>",
                         link: "recordContribution"
                     },
@@ -83,10 +120,20 @@
                         short: "Disbursement",
                         icon: "<i class='fa-solid fa-hand-holding-heart'></i>",
                         link: "recordAidDisbursement"
+<<<<<<< HEAD
                     }
 
                 ],
                 loading: false
+=======
+=======
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+                        link: "recordContribution"
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+                    }
+
+                ]
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             }
         },
         components: {
@@ -111,7 +158,10 @@
                             name: 'Admin'
                         });
                     }else {
+<<<<<<< HEAD
                         this.loading = true
+=======
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         this.orgName = response.data['orgName'];
                         this.orgID = response.data['orgID'];
                     }
@@ -120,7 +170,10 @@
             axios.get('/getallappeal/currentAppeal')
                 .then(response => {
                     this.appeals = response.data;
+<<<<<<< HEAD
                     this.loading = false
+=======
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             });
         },
         methods: {

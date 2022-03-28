@@ -10,12 +10,12 @@
                         <div id="slideCaprition" class="carousel slide" data-bs-ride="carousel">
 
                             <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#slideCaprition" v-bind:data-bs-slide-to="index" v-for="(indicator,index) in indicators" :key=indicator
+                                <button type="button" data-bs-target="#slideCaprition" v-bind:data-bs-slide-to="index" v-for="(indicator,index) in indicators" 
                                 v-bind:class="{ active: index==0 }" v-bind:aria-current="{true: index==0}" v-bind:aria-label="'Slide' + index"></button>
                             </div>
 
                             <div class="carousel-inner">
-                                <div class="carousel-item" v-for="(banner,index) in banners" :key=banner v-bind:class="{ active: index==0 }">
+                                <div class="carousel-item" v-for="(banner,index) in banners" v-bind:class="{ active: index==0 }">
                                     <img v-bind:src="banner.img" class="slideImage" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
                                         <p v-html="banner.description"></p>
@@ -75,6 +75,7 @@
                                 <h4 class="text-center" mt-3>Select Organization</h4>
                             </div>
                         </div>
+<<<<<<< HEAD
                         <div class="row mb-3">
 
                             <!-- loading spinner -->
@@ -83,24 +84,86 @@
                                     <span class="sr-only">Loading...</span>
                                 </div>
                             </div>
-                        </div>
+                            
+=======
+<<<<<<< HEAD
                         <div class="row mb-3">
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                             <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(org,index) in organizations" :key=org>
                                 <div class="card mb-3 shadow" style="max-width: 540px;">
                                     <div class="card-header">
                                         <h4>ID:{{org.orgID}}</h4>
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+                        <div class="row mb-3">
+                            <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(org,index) in organizations" :key=org>
+                                <div class="card mb-3" style="max-width: 540px;">
+                                    <div class="card-header">
+                                        <h4>ID:{{org.orgID}}</h4>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+                        <div class="row mb-5">
+                            <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(org,index) in organizations" :key=org>
+                                <div class="card mb-3" style="max-width: 540px;">
+                                    <div class="card-header">
+<<<<<<< HEAD
+                                        <h4>ID:{{org.orgID}}</h4>
+=======
+                                        <h4>{{org.orgID}}</h4>
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                     </div>
                                     <div class="card-body mb-3">
                                         <h5 class="card-title">{{org.orgName}}</h5>
                                         <p class="card-text">{{org.address}}</p>
                                         <router-link v-bind:to="{name: 'SelfRegister',params:{name: org.orgName, id: org.orgID}}">
+<<<<<<< HEAD
                                                 <a href="#" class="btn btn-primary" v-on:click="setCookie(org.orgID,org.orgName)">Register Applicant</a>
+=======
+                                                <a href="#" class="btn btn-primary">Register Applicant</a>
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                         </router-link>
 
                                     </div>
                                 </div> 
                             </div>
                         </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
+
                         <div class="row mb-5">
                             <div class="col-12 text-center">
                                 <router-link v-bind:to="{name: 'viewAllOrganizations'}">
@@ -108,32 +171,86 @@
                                 </router-link>
                             </div>
                         </div>
+                        
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                     </div>
                 </section>
             </div>
         <!-- content-->
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
         <!-- content Conrtribution -->
             <div class="py-4 bg-light" id="Contribution">
                 <section>
                     <div class="container">
                         <div class="row mt-5 mb-3">
-
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                             <h1 class="text-center mb-5 ">Interested in making a donation ?</h1>
                             <h4 class="text-center mb-3">Follow these simple steps, and save lives today!</h4>
                             <div class="col-md-5 mb-5 text-center">
                                 <animation-component>
                                     <img class="img-fluid" src="../../../public/images/donationimage.png" alt="About Us logo">
+<<<<<<< HEAD
+=======
+=======
+                            <h1 class="text-center mb-5 ">Are you Donor?</h1>
+                            
+                            <div class="col-md-5 mb-5 text-center">
+                                <animation-component>
+                                    <img class="img-fluid" src="../../../public/images/AboutUsLogo.jpeg" alt="About Us logo">
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                 </animation-component>
                             </div>
                             <div class="col-md-7 mb-5 my-auto">
                                 <animation-component>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                     <p>Step 1 : Select the view appeals button below</p> 
                                     <p>Step 2 : You will be taken to a page to view all current and past appeals.</p> 
                                     <p>Step 3 : Select View Organization Info for the specific appeal you would like to make a donation for</p> 
                                     <p>Step 4 : Details of the Organization will be displayed, select Contribute Cash to continue.</p>  
                                     <p>Step 5 : Select the Appeal ID and fill in the other relevant payment information details.</p> 
                                     <p>Step 6 : Ensure all details are accurate in the confirmation menu before submitting.</p> 
+<<<<<<< HEAD
+=======
+=======
+                                    <p>
+                                       text text text text text text text text text text text text text text text text text text
+                                       text text text text text text text text text text text text text text text text text text
+                                       text text text text text text text text text text text text text text text text text text
+                                    </p>  
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                 </animation-component>
                             </div>
                         </div>
@@ -152,6 +269,29 @@
             </div>
         <!-- content Contribution -->
 
+
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+
+
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
         <!-- content 3 FAQ -->
         <div class="py-4 bg-light" id="FAQ">
             <section>
@@ -208,8 +348,15 @@
                         
                         <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(sponsor) in sponsors" :key=sponsor>
                         <animation-component>
+<<<<<<< HEAD
                             <div class="card shadow" style="width: 14rem;">
-
+=======
+<<<<<<< HEAD
+                            <div class="card shadow" style="width: 14rem;">
+=======
+                            <div class="card" style="width: 14rem;">
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                 <img v-bind:src= "sponsor.img" alt="SponsorImage" class="align-middle">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ sponsor.name}}</h5>
@@ -235,8 +382,14 @@
     import AnimationComponent from './BaseComponents/AnimationComponent'
     import FooterComponent from './BaseComponents/FooterComponent'
     import GotoTopComponent from './BaseComponents/GotoTopComponent'
+<<<<<<< HEAD
     import Cookies from 'js-cookie'
-
+=======
+<<<<<<< HEAD
+    import Cookies from 'js-cookie'
+=======
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
     import axios from 'axios'
 
     export default {
@@ -282,7 +435,36 @@
                 faqs: [
                     {
                         question: "1) Am I able to register for an account by myself ?",
+<<<<<<< HEAD
                         answer: "A1) Yes, under the register column above the FAQ, users can now manually register themselves, without the direct help of Organization Representatives."
+=======
+<<<<<<< HEAD
+                        answer: "A1) Yes, under the register column above the FAQ, users can now manually register themselves, without the direct help of Organization Representatives."
+=======
+<<<<<<< HEAD
+                        answer: "A1) Yes, under the register column above the FAQ, users can now manually register themselves, without the direct help of Organization Representatives."
+=======
+<<<<<<< HEAD
+                        answer: "A1) Yes, under the register column above the FAQ, users can now manually register themselves, without the direct help of Organization Representatives."
+=======
+<<<<<<< HEAD
+                        answer: "A1) Yes, under the register column above the FAQ, users can now manually register themselves, without the direct help of Organization Representatives."
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        answer: "A1) Yes, under the register column above the FAQ, users can now manually register themselves, without the direct help of Organization Representatives."
+=======
+                        answer: "A1) Yes, under the register column below the FAQ, users can now manually register themselves, without the direct help of Organization Representatives."
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                        answer: "A1) Yes, under the register column below the FAQ, users can now manually register themselves, without the direct help of Organization Representatives."
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                     },
                     {
                         question: "2) How will I log in to my account ?",
@@ -326,8 +508,12 @@
              
                     
                  ],
+<<<<<<< HEAD
                  organizations: [],
                  loading: false
+=======
+                 organizations: []
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                  
              }
         },
@@ -337,6 +523,7 @@
             'footer-component' : FooterComponent,
             'gototop-component' : GotoTopComponent
         },
+<<<<<<< HEAD
         methods: {
             setCookie(id,name) {
                 Cookies.set('orgID',id);
@@ -345,6 +532,11 @@
         },
                 
         created() {
+=======
+                
+        created() {
+<<<<<<< HEAD
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             Cookies.remove('orgID');
             Cookies.remove('orgName');
             Cookies.remove('fromDate');
@@ -354,21 +546,64 @@
             Cookies.remove('description');
             Cookies.remove('address');
 
+
+
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+            
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             axios.get('/loginCheck')
             .then(response => {
 
                 if(response.data == 'none') {
+<<<<<<< HEAD
                     this.loading = true;
                     axios.get('/getorg/getlatestorg')
                     .then(response => {
                         this.organizations = response.data;
                         this.loading = false;
-                    });
+=======
+                     
+<<<<<<< HEAD
                     axios.get('/getorg/getlatestorg')
+=======
+<<<<<<< HEAD
+                    axios.get('/getorg/getlatestorg')
+=======
+<<<<<<< HEAD
+                    axios.get('/getorg/getlatestorg')
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    axios.get('/getorg/getlatestorg')
+=======
+                    axios.get('/api/getorg')
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                    axios.get('/api/getorg')
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
                     .then(response => {
                         this.organizations = response.data;
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                     });
-
                 }else if(response.data != 'admin'){
                     this.$router.push({
                         name: 'OrganizationRep'
@@ -381,6 +616,36 @@
                     
                 }
             });
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+            
+
+=======
+                axios.get('/api/getorg')
+                .then(response => {
+                    this.organizations = response.data;
+                });
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
         },
      }
  </script>
@@ -407,4 +672,3 @@
         }
     }
  </style>
- 

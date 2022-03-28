@@ -18,6 +18,11 @@ class CashdonationController extends Controller
         $cash->ContributioncontributionID = $request->contributionID;
         $cash->ContributionAppealOrganizationorgID = $request->orgID;
         $cash->ContributionAppealappealID = $request->appealID;
+<<<<<<< HEAD
+
+=======
+        
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
 
         $cash->save();
     }

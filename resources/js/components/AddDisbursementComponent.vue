@@ -27,23 +27,36 @@
                                         
                                             <div class="col-lg-12 mb-3">
                                                 <label class="form-label required">Disbursement Date</label>
+<<<<<<< HEAD
                                                 <input type="date" class="input-sm form-control" 
                                                 name="disbursementDate" id="disbursementDate" v-on:input ="detectInput" required>
+=======
+                                                <input type="date" class="input-sm form-control" name="disbursementDate" id="disbursementDate" required>
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                             </div>
                                         </div>
                                         <div class="form-row my-5">
                                             <div class="col-lg-12 mb-3">
                                                 <label class="form-label required">Cash Amount</label>
+<<<<<<< HEAD
                                                 <input required pattern="^([1-9]\d*|0)(\.\d+)?$" 
                                                 type="text" class="form-control" placeholder="Cash Amount" name="cashAmount"
                                                 title="Enter positive number" v-on:input ="detectInput">
+=======
+                                                <input required pattern="^([1-9]\d*|0)(\.\d+)?$" type="text" class="form-control" placeholder="Cash Amount" name="cashAmount"
+                                                title="Enter positive number">
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                             </div>
                                         </div>
                                         <div class="form-row my-5">
                                             <div class="col-lg-12">
                                                 <label class="form-label required">Goods</label>
+<<<<<<< HEAD
                                                 <input required class="form-control" placeholder="Goods" 
                                                 name="goods" v-on:input ="detectInput">
+=======
+                                                <input required class="form-control" placeholder="Goods" name="goods">
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                             </div>
                                         </div>
                                         <div class="text-center mt-3 mb-3">
@@ -64,7 +77,11 @@
             </section>
 
             <!-- Confirm Modal -->
+<<<<<<< HEAD
             <div class="modal fade" data-bs-backdrop ="static" id="confirmModal" >
+=======
+            <div class="modal fade" id="confirmModal" >
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -72,6 +89,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
+<<<<<<< HEAD
                                             
                             <!-- loading spinner -->
                             <div class="d-flex justify-content-center mt-5 mb-5" id="loadingMenu" v-if="loading">
@@ -82,6 +100,10 @@
 
                             <h4 class="modal-title text-center" v-show="!loading">Are you sure to submit?</h4>
                             <div class="mt-3" v-show="!loading">
+=======
+                            <h4 class="modal-title text-center">Are you sure to submit?</h4>
+                            <div class="mt-3">
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                 <ul>
                                     <li>Disbursement Date: {{disbursementDate}}</li>
                                     <li>Cash Amount: {{cashAmount}}</li>
@@ -89,7 +111,11 @@
                                 </ul>
                             </div> 
                         </div>
+<<<<<<< HEAD
                         <div class="modal-footer justify-content-center mt-3 mb-3" v-show="!loading">
+=======
+                        <div class="modal-footer justify-content-center mt-3 mb-3">
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                             <button type="button" class="btn btn-primary" v-on:click="submit">Confirm</button>
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
                         </div>
@@ -99,7 +125,11 @@
             <!-- Confirm Modal -->
 
             <!-- Thankyou Modal -->
+<<<<<<< HEAD
             <div class="modal fade" data-bs-backdrop ="static" id="thankyouModal">
+=======
+            <div class="modal fade" id="thankyouModal">
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -179,9 +209,13 @@
                 cashAmount: "",
                 disbursementDate: "",
                 goods: "",
+<<<<<<< HEAD
                 outcome: "",
                 changed: "",
                 loading: false
+=======
+                outcome: ""
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                 
 
             }
@@ -208,6 +242,7 @@
                         this.orgID = response.data['orgID'];
                     }
             });
+<<<<<<< HEAD
             if(!this.changed)
                 window.addEventListener("beforeunload", this.prevent);
         
@@ -223,6 +258,12 @@
                 prevent (event) {
                     event.returnValue = "Changes you made may not be saved.";
                 },
+=======
+
+        
+        },
+        methods: {
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                 confirm(event) {
                         const {disbursementDate,cashAmount,goods} = Object.fromEntries(new FormData(event.target));
                         var dd = new Date(disbursementDate);
@@ -239,7 +280,11 @@
                         confirmModal.show()
                 },
                 async submit() {
+<<<<<<< HEAD
                     this.loading = true;
+=======
+
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                     const newDisbursement = {
                         disbursementDate: this.disbursementDate,
                         cashAmount: this.cashAmount,
@@ -251,7 +296,10 @@
                     await axios.post('/addDisbursement',newDisbursement)
                     await axios.post('/findAppeal/outcome',{appealID: this.appealID}).then(response => {
                         this.outcome = response.data[0]['outcome'];
+<<<<<<< HEAD
                         this.loading = false;
+=======
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                     });
                     
 
