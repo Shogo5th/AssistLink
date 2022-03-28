@@ -13,7 +13,15 @@
                 </div>
                 <div class="row mb-5">
                     <div class="col-lg-6 order-md-1  mx-auto">
+<<<<<<< HEAD
                         <div class="card shadow">
+=======
+<<<<<<< HEAD
+                        <div class="card shadow">
+=======
+                        <div class="card">
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                             <div class="card-body mb-3">
                                 <div class="row">
                                     <div class="col-lg-12 text-center mb-5">
@@ -38,8 +46,12 @@
                                     <div class="form-row my-5" v-if="selected == 'goods'">
                                         <div class="col-lg-12 mb-3">
                                             <label class="form-label required">Descriotion</label>
+<<<<<<< HEAD
                                             <input required type="text" class="form-control" placeholder="Description" 
                                             name="description" v-on:click="detectInput">
+=======
+                                            <input required type="text" class="form-control" placeholder="Description" name="description">
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                         </div>
                                     </div>
                                     <div class="form-row my-5" v-if="selected == 'goods'">
@@ -47,7 +59,11 @@
                                             <label class="form-label required">Estimated Value</label>
                                             <input required pattern="^([1-9]\d*|0)(\.\d+)?$" type="text" class="form-control"
                                              placeholder="Estimated Value" name="estimatedValue"
+<<<<<<< HEAD
                                             title="Enter positive number" v-on:click="detectInput">
+=======
+                                            title="Enter positive number">
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                         </div>
                                     </div>
 
@@ -56,24 +72,37 @@
                                     <div class="form-row my-5" v-if="selected == 'cash'">
                                         <div class="col-lg-12 mb-3">
                                             <label class="form-label required">Cash Amount</label>
+<<<<<<< HEAD
                                             <input required pattern="^([1-9]\d*|0)(\.\d+)?$" type="text" 
                                             class="form-control" placeholder="Cash Amount" name="cashAmount"
                                             title="Enter positive number" v-on:click="detectInput">
+=======
+                                            <input required pattern="^([1-9]\d*|0)(\.\d+)?$" type="text" class="form-control" placeholder="Cash Amount" name="cashAmount"
+                                            title="Enter positive number">
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                         </div>
                                     </div>
                                     <div class="form-row my-5" v-if="selected == 'cash'">
                                         <div class="col-lg-12 mb-3">
                                             <label class="form-label required">Payment Channel</label>
+<<<<<<< HEAD
                                             <input required type="text" class="form-control"  
                                             placeholder="Payment Channle" name="paymentChannel" v-on:click="detectInput">
+=======
+                                            <input required type="text" class="form-control"  placeholder="Payment Channle" name="paymentChannel">
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                         </div>
                                     </div>
                                     <div class="form-row my-5" v-if="selected == 'cash'">
                                         <div class="col-lg-12 mb-3">
                                             <label class="form-label required">Reference No</label>
                                            <input required pattern="^([0-9]{11,20})$" type="text" class="form-control"  
+<<<<<<< HEAD
                                            placeholder="Reference No" name="referenceNo" 
                                            title="Enter enter number between 11 and 20 digits" v-on:click="detectInput">
+=======
+                                           placeholder="Reference No" name="referenceNo" title="Enter enter number between 11 and 20 digits">
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                         </div>
                                     </div>
 
@@ -85,7 +114,15 @@
                                         <button type="submit" class="btn btn-lg btn-outline-primary mb-3">Continue</button>
                                     </div>
                                     <div class="text-center mt-3 mb-3">
+<<<<<<< HEAD
                                         <router-link v-bind:to="{name: 'recordContribution'}">
+=======
+<<<<<<< HEAD
+                                        <router-link v-bind:to="{name: 'recordContribution'}">
+=======
+                                        <router-link v-bind:to="{name: 'Home'}">
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                             <button type="button" class="btn btn-lg btn-outline-danger">Cancel</button>
                                         </router-link>          
                                     </div>
@@ -99,7 +136,11 @@
         </section>
 
          <!-- Confirm Modal -->
+<<<<<<< HEAD
         <div class="modal fade" data-bs-backdrop ="static" id="confirmModal" >
+=======
+        <div class="modal fade" id="confirmModal" >
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -107,6 +148,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
+<<<<<<< HEAD
 
                          <!-- loading spinner -->
                         <div class="d-flex justify-content-center mt-5 mb-5" id="loadingMenu" v-if="loading">
@@ -117,6 +159,10 @@
 
                         <h4 class="modal-title text-center"  v-show="!loading">Are you sure to submit?</h4>
                         <div class="mt-3"  v-show="!loading">
+=======
+                        <h4 class="modal-title text-center">Are you sure to submit?</h4>
+                        <div class="mt-3">
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                             <ul>
                                 <li>Type: {{selected}}</li>
                                 <li  v-if="selected == 'goods'">Descriotion: {{description}}</li>
@@ -127,7 +173,11 @@
                             </ul>
                         </div> 
                     </div>
+<<<<<<< HEAD
                     <div class="modal-footer justify-content-center mt-3 mb-3"  v-show="!loading">
+=======
+                    <div class="modal-footer justify-content-center mt-3 mb-3">
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         <button type="button" class="btn btn-primary" v-on:click="submit">Confirm</button>
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
                     </div>
@@ -137,7 +187,11 @@
         <!-- Confirm Modal -->
 
         <!-- Thankyou Modal -->
+<<<<<<< HEAD
         <div class="modal fade" data-bs-backdrop ="static" id="thankyouModal">
+=======
+        <div class="modal fade" id="thankyouModal">
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -172,20 +226,44 @@
                 appeals: [],
                 _menues: [
                     {
+<<<<<<< HEAD
                         name: "Register Applicant",
                         short: "Applicant",
                         icon: "<i class='fa-regular fa-address-card'></i>",
+=======
+<<<<<<< HEAD
+                        name: "Register Applicant",
+                        short: "Applicant",
+                        icon: "<i class='fa-regular fa-address-card'></i>",
+=======
+                        name: "Register Applicants",
+                        short: "Applicant",
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         link: "viewApplicants"
                     },
                     {
                         name: "Organize Aid Appeal",
                         short: "Appeal",
+<<<<<<< HEAD
                         icon: "<i class='fa-solid fa-heart-circle-plus'></i>",
+=======
+<<<<<<< HEAD
+                        icon: "<i class='fa-solid fa-heart-circle-plus'></i>",
+=======
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         link: "organizeAidAppeal"
                     },
                     {
                         name: "Record Contribution",
                         short: "Contribution",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         icon: "<i class='fa-regular fa-handshake'></i>",
                         link: "recordContribution"
                     },
@@ -194,6 +272,13 @@
                         short: "Disbursement",
                         icon: "<i class='fa-solid fa-hand-holding-heart'></i>",
                         link: "recordAidDisbursement"
+<<<<<<< HEAD
+=======
+=======
+                        icon: "<i class='fas fa-calendar-alt'></i>",
+                        link: "recordContribution"
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                     }
 
                 ],
@@ -206,9 +291,13 @@
                 referenceNo: "",
                 contributionID: "",
                 description: "",
+<<<<<<< HEAD
                 estimatedValue: "",
                 changed: false,
                 loading: false
+=======
+                estimatedValue: ""
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
 
             }
         },
@@ -237,6 +326,7 @@
                     }
             });
 
+<<<<<<< HEAD
             if(!this.changed)
                 window.addEventListener("beforeunload", this.prevent);
 
@@ -252,6 +342,10 @@
             prevent (event) {
                 event.returnValue = "Changes you made may not be saved.";
             },
+=======
+        },
+        methods: {
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             confirm(event) {
 
                 if(this.selected == 'cash') {
@@ -270,7 +364,11 @@
                 confirmModal.show()
             },
             async submit() {
+<<<<<<< HEAD
                 this.loading = true;
+=======
+
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                 let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
                 let randomID = '';
                 for ( var i = 0; i < 8; i++ ) {
@@ -311,7 +409,13 @@
                     await axios.post('/addContribution/Goods',newDonation)
                 }
                 
+<<<<<<< HEAD
                 this.loading = false;
+=======
+
+                
+                
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
 
                 // hide confirm modal
                 const closeConfirmModal = bootstrap.Modal.getInstance(confirmModal);

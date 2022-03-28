@@ -23,7 +23,15 @@
       </div>
 
       <div class="collapse navbar-collapse" id="Navbar">
+<<<<<<< HEAD
         <ul class="navbar-nav me-auto mt-2 mt-md-0" v-show="width<768 && navFlag === true">
+=======
+<<<<<<< HEAD
+        <ul class="navbar-nav me-auto mt-2 mt-md-0" v-show="width<768 && navFlag === true">
+=======
+        <ul class="navbar-nav me-auto mt-2 mt-md-0" v-show="width<768">
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
           <li class="nav-item" v-for="(item) in navigation" :key=item>
             <a class="nav-link" v-bind:href="item.num">{{item.title}}</a>
           </li>
@@ -33,7 +41,15 @@
   </nav>
 
 
+<<<<<<< HEAD
   <div class="nav-scroller py-1 mb-2 bg-light" v-if="width>=768 && navFlag === true">
+=======
+<<<<<<< HEAD
+  <div class="nav-scroller py-1 mb-2 bg-light" v-if="width>=768 && navFlag === true">
+=======
+  <div class="nav-scroller py-1 mb-2 bg-light" v-if="width>=768">
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
     <nav class="nav d-flex justify-content-around">
       <a class="p-2 link-secondary" v-bind:href="item.num" v-for="(item) in navigation" :key=item>{{item.title}}</a>
     </nav>
@@ -50,6 +66,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
+<<<<<<< HEAD
                     <!-- loading spinner -->
                       <div class="d-flex justify-content-center mt-5 mb-5" id="loadingMenu" v-if="loading">
                           <div class="spinner-border text-primary mt-5 mb-5" role="status" style="width: 5rem; height: 5rem;">
@@ -57,13 +74,45 @@
                           </div>
                       </div>
                       <form v-on:submit.prevent="login" v-show="!loading">
+=======
+                      <form v-on:submit.prevent="login">
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         <div class="mb-3">
                           <label class="form-label required">Username</label>
                           <input type="text" class="form-control" name="username">
                         </div>
                         <div class="mb-3">
                           <label class="form-label required">Password</label>
+<<<<<<< HEAD
                           <input type="password" class="form-control" name="password">
+=======
+<<<<<<< HEAD
+                          <input type="password" class="form-control" name="password">
+=======
+<<<<<<< HEAD
+                          <input type="password" class="form-control" name="password">
+=======
+<<<<<<< HEAD
+                          <input type="password" class="form-control" name="password">
+=======
+<<<<<<< HEAD
+                          <input type="password" class="form-control" name="password">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                          <input type="password" class="form-control" name="password">
+=======
+                          <input type="text" class="form-control" name="password">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                          <input type="text" class="form-control" name="password">
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         </div>
                         <div class="modal-footer justify-content-center">
                           <button type="submit" class="btn btn-primary">Login</button>
@@ -98,10 +147,31 @@
               {
                 title: "Register",
                 num: "#SelfRegister"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
               },
               {
                 title: "Contribution",
                 num: "#Contribution"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
               },
               {
                 title: "FAQ",
@@ -118,8 +188,16 @@
            ],
            width: window.innerWidth,
            usesrname: "",
+<<<<<<< HEAD
            password: "",
            loading: false
+=======
+<<<<<<< HEAD
+           password: "",
+=======
+           password: ""
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
          }
        },
 
@@ -135,8 +213,12 @@
             loginModal.show()
         },
         login() {
+<<<<<<< HEAD
           
           this.loading = true
+=======
+
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
           const {username,password} = Object.fromEntries(new FormData(event.target));
           this.username = username;
           this.password = password;
@@ -148,10 +230,32 @@
 
 
           axios.post('/loginOrgRep',check).then(response => {
+<<<<<<< HEAD
                     
             console.log(response.data);
             if(response.data == 1) {
               this.loading = false
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+                    
+            console.log(response.data);
+            if(response.data == 1) {
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
               const modal = bootstrap.Modal.getInstance(loginModal)
               modal.hide()
               
@@ -160,7 +264,11 @@
               });
               
             }else if(response.data == 2){
+<<<<<<< HEAD
               this.loading = false
+=======
+
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
               const modal = bootstrap.Modal.getInstance(loginModal)
               modal.hide()
             
@@ -169,16 +277,71 @@
               });
 
             }else if(response.data == 3) {
+<<<<<<< HEAD
               this.loading = false
               alert("Applicant account is not available");
               return null;
             }else {
               this.loading = false
+=======
+              alert("Applicant account is not available");
+              return null;
+            }else {
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
               alert("username and password are wrong !");
               return null;
             }
           });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+                    if(response.data == "admin") {
+                      document.cookie = 'type=admin';
+                      
+                      const modal = bootstrap.Modal.getInstance(loginModal)
+                      modal.hide()
+
+                      this.$router.push('/admin')
+
+                    }else if(response.data != 0) {
+                      document.cookie = 'type=orgrep';
+                      document.cookie = 'orgID=' + response.data[0].OrganizationorgID
+
+                      const modal = bootstrap.Modal.getInstance(loginModal)
+                      modal.hide()
+                     
+                      this.$router.push({
+                        name: 'OrganizationRep', 
+                        params: { orgID:response.data[0].OrganizationorgID }
+                      });
+                    }else {
+                      alert("username and password are wrong !");
+                      return null;
+                    }
+                });
+
+            //
+>>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
+<<<<<<< HEAD
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+=======
+>>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
+>>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
         }
       },
       mounted: function() {

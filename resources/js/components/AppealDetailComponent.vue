@@ -1,5 +1,13 @@
 <template>
+<<<<<<< HEAD
 <header-component v-bind:navFlag="false"></header-component>
+=======
+<<<<<<< HEAD
+<header-component v-bind:navFlag="false"></header-component>
+=======
+<header-component></header-component>
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
     <div class="py-4">
         <section>
             <div class="container-fluid" id="box">
@@ -9,6 +17,7 @@
                     </div>
                 </div>
                 <div class="row mb-5">
+<<<<<<< HEAD
                      <!-- loading spinner -->
                     <div class="d-flex justify-content-center mt-5 mb-5" id="loadingMenu" v-if="loading">
                         <div class="spinner-border text-primary mt-5 mb-5" role="status" style="width: 5rem; height: 5rem;">
@@ -18,6 +27,14 @@
 
                     <div class="col-lg-6 order-md-1  mx-auto" v-show="!loading">
                         <div class="card shadow">
+=======
+                    <div class="col-lg-6 order-md-1  mx-auto">
+<<<<<<< HEAD
+                        <div class="card shadow">
+=======
+                        <div class="card">
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                             <div class="card-body mb-3">
                                 <div class="row">
                                     <div class="col-lg-12 text-center mb-5">
@@ -34,7 +51,15 @@
                                 <div class="row text-center">
                                     <div class="col-lg-12 mt-3"  v-if=" this.type == 'Current' ">
                                         <router-link v-bind:to="{name: 'SelfContribution'}">
+<<<<<<< HEAD
                                             <button type="button" class="btn btn-outline-primary" v-on:click="setCookie()">Contribute Cash</button>
+=======
+<<<<<<< HEAD
+                                            <button type="button" class="btn btn-outline-primary" v-on:click="setCookie()">Contribute Cash</button>
+=======
+                                            <button type="button" class="btn btn-outline-primary">Contribute Cash</button>
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                         </router-link> 
                                     </div>  
                                 </div> 
@@ -69,8 +94,12 @@
                orgID: "",
                orgName: "",
                address: "",
+<<<<<<< HEAD
                type: "",
                loading: false
+=======
+               type: ""
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             }
         },
         components: {
@@ -84,16 +113,37 @@
             .then(response => {
 
                 if(response.data == 'none') {
+<<<<<<< HEAD
                     this.loading = true;
+=======
+<<<<<<< HEAD
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                     axios.post('/searchOrg',{'orgID':this.orgID})
                         .then(response => {
 
                             this.orgName = response.data[0]['orgName']
                             this.address = response.data[0]['address']
+<<<<<<< HEAD
                             this.loading = false;
 
                          });
                    
+=======
+
+                         });
+                   
+=======
+                    axios.post('/findOrganization',{'orgID':Cookies.get('orgID')})
+                    .then(response => {
+                        this.orgName = response.data[0]['orgName'];
+                        this.address = response.data[0]['address'];
+<<<<<<< HEAD
+                        Cookies.set('orgName',this.orgName);
+=======
+>>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
+                    });
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                 }else if(response.data != 'admin'){
                     this.$router.push({
                         name: 'OrganizationRep'
@@ -110,9 +160,18 @@
 
         },
         methods: {
+<<<<<<< HEAD
             setCookie() {
                 Cookies.set('orgName',this.orgName)
             }
+=======
+<<<<<<< HEAD
+            setCookie() {
+                Cookies.set('orgName',this.orgName)
+            }
+=======
+>>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
+>>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             
         }
         
