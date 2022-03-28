@@ -22,6 +22,36 @@ class OrganizationController extends Controller
         
     }
 
+    public function getLastSix() {
+        
+        $data = Organization::orderBy('orgID', 'DESC')->take(6)->get()->toArray();
+        return $data;
+    }
+
+    public function search(Request $request) {
+        
+        $data = Organization::where('orgID',$request->orgID)->get()->toArray();
+        return $data;
+    }
+    
+    public function loginCheck()
+    {   
+        $request = session()->get('type','none');
+        if($request == 'none') {
+            return $request;
+        }else if($request == 'rep') {
+            $rep['orgName'] = session()->get('orgName');
+            $rep['orgID'] = session()->get('orgID');
+            $rep['fullname'] = session()->get('fullname');
+            $rep['email'] = session()->get('email');
+            $rep['applicantUsername'] = session()->get('applicantUsername','none');
+            $rep['applicantIDno'] = session()->get('applicantIDno','none');
+            return $rep;
+        }else {
+            return 'admin';
+        }
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -34,7 +64,7 @@ class OrganizationController extends Controller
         $org = new Organization;
         $org->OrgName = $request->orgName;
         $org->address = $request->address;
-        $org->orgID = substr(bin2hex(random_bytes(15)), 0, 15);
+        $org->orgID = substr(bin2hex(random_bytes(10)), 0, 10);
         $org->save();
         return response()->json('The post successfully added');
     }
@@ -45,14 +75,12 @@ class OrganizationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $organization = Organization::find($id);
-        if($organizaton) {
-            return response() ->json([
-                'message'=>'ok',
-                'data'=>$organization
-            ], 200, [], JSON_UNESCAPED_UNICODE);
+    public function show(Request $request)
+    {   
+        // why return null?
+        $organization = Organization::where('orgID',$request->orgID)->get()->toArray();
+        if($organization) {
+            return $organization;
         }return response()->json([
             'message' => 'Organization not found',
         ],404);

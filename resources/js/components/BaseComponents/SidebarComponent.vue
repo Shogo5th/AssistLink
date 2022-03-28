@@ -1,13 +1,13 @@
 <template>
     <div class="page">
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="sidebar-logo-container">
                     <div class="logo-container">
-                        <img class="logo-sidebar" src="../../../../public/images/samplelogo.png" />
+                        <img class="logo-sidebar" src="../../../../public/images/AssistLink-logos.jpeg" />
                     </div>
                     <div class="brand-name-container">
-                        <p class="brand-name">
+                        <p class="brand-name text-nowrap">
                             Assist Link
                         </p>
                     </div>
@@ -15,15 +15,15 @@
             </div>
             <div class="sidebar-body">
                 <ul class="navigation-list">
-                    <li class="navigation-list-item" v-for="(menu, index) in menues" :key="menu" v-bind:menu="menu">
-                        
+                    <li class="navigation-list-item" v-for="(menu) in menues" :key="menu" v-bind:menu="menu">
                         <router-link v-bind:to="{name: menu.link}">
                             <a class="navigation-link" href="#">
-                                <div class="row">
+                                <div class="row" id="item-icon">
                                     <div class="col-2">
-                                        <p v-html="menu.icon"></p>
+                                        <p class="menu-icon" v-html="menu.icon"></p>
+                                       
                                     </div>
-                                    <div class="col-10 text-white">
+                                    <div class="col-10 text-white menu-title">
                                         {{menu.name}}
                                     </div>
                                 </div>
@@ -34,14 +34,9 @@
 
             </div>
         </div>
-        
         <div class="content">
             <div class="navigationBar mb-3">
-                <button id="sidebarToggle" class="btn sidebarToggle" v-on:click="sidebarToggle" v-if="width<768">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div>
+                <div id="logoutbutton">
                     <a class="btn btn-outline-primary" href="#" v-on:click="openModal()">Log out</a>
                 </div>
             </div>
@@ -77,67 +72,68 @@
 </template>
 
  <script>
-
+    import axios from 'axios'
 
     export default {
         props: ['menues'],
         data() {
             return {
-                width: window.innerWidth,
+
             }
         },
         methods: {
-            sidebarToggle: function() {
-                let sidebarToggle = document.querySelector(".sidebarToggle");
-                document.querySelector("body").classList.toggle("active");
-                document.getElementById("sidebarToggle").classList.toggle("active");
-            },
-            resize: function() {
-                this.width = window.innerWidth;
-                if(this.width === 768) {
-                    this.sidebarToggle();
-                }
-            },
             openModal() {
                 var logoutModal = new bootstrap.Modal(document.getElementById('logoutModal'),{})
                 logoutModal.show()
             },
             logout() {
+
+                 axios.get('/logout')
+                    .then(response => {
+                        console.log('logout');
+                    });
                 const modal = bootstrap.Modal.getInstance(logoutModal)
                 modal.hide()
             }
-        },
-        mounted: function() {
-            window.addEventListener('resize', this.resize)
-        },
-        beforeDestroy: function () {
-            window.removeEventListener('resize', this.resize)
         }
     }
 
  </script>
  
  <style>
-        ::-webkit-scrollbar {
-            width: 5px;
-        }
 
         body {
             background-color: #e6e6e6;
         }
-        .page .sidebar{
-            height:100vh;
-            width:250px;
-            background: blue;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
+        .page {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
+        .menu-title {
+            display: none;
+        }
+               
+        .page .sidebar {
+            z-index: 1;
+            background: blue;
+            order: 2;
+            position: sticky;
+            display: flex;
+            bottom: 0;
+            height: 52px;
+            left: 0;
+            right: 0;
+            align-items: center;
+            justify-content: space-between;
 
-        .page .content{
-            margin-left: 250px;
+        }
+
+        .page .content {
+            flex: 75%;
+            order: 1;
         }
 
         .navigationBar {
@@ -147,20 +143,7 @@
             padding: 38px 0px;
             align-items: center;
             box-shadow: 0 4px 2px -2px #c5c6c7;
-        }
-
-        .sidebarToggle {
-            font-size: 16px;
-            margin-left: -20px;
-            z-index: 999;
-        }
-
-        .sidebarToggle.active {
-            margin-left: 10px;
-        }
-
-        .sidebarToggle:hover{
-            color: white;
+            justify-content: space-between;
         }
 
         .page .content .container{
@@ -170,17 +153,17 @@
             line-height: 28px;
         }
 
-        body.active .page .sidebar{
-            left: -250px;
+        .sidebar-header {
+            display: none;
+            order: 2;
         }
 
-        body.active .page .content{
-            margin-left: 0;
+        .sidebar-body {
             width: 100%;
+            order: 1;
+            height: 52px;
         }
-        .sidebar-header {
-            padding: 10px 20px 10px 15px;
-        }
+
         .sidebar-logo-container {
             display: flex;
         }
@@ -208,13 +191,13 @@
         }
 
         .navigation-list {
+            display: flex;
+            justify-content: space-around;
             list-style-type:none;
-            padding: 0px 18px;
-            margin-top: 30px;
+            height: 100%;
+            align-items: center;
         }
         .navigation-list-item {
-            padding: 12px 18px 12px 25px;
-            margin: 15px 0px;
             border-radius: 8px;
             
         }
@@ -244,5 +227,97 @@
             color: rgb(255, 255, 255, 0.8);
             font-weight: 500;
         }
-       
+
+        #logoutbutton {
+            margin-right: 20px;
+            margin-left:auto;
+        }
+
+        #item-icon {
+            align-items: center;
+            justify-content: center;
+        }
+
+        p.menu-icon{
+            margin: 0;
+            color: white;
+        }
+
+    @media only screen and (min-width: 600px){
+        .page .sidebar {
+            position: sticky;
+        }
+    }
+
+    @media only screen and (min-width: 769px){
+
+        .page {
+            flex-direction: row;
+        }
+
+        .page .sidebar {
+            display: block !important;
+            position: unset;
+            height: 100vh;
+            order: 1;
+            width: 250px;
+        }
+
+        .sidebar-header {
+            display: block;
+            padding: 10px 20px 10px 15px;
+        }
+
+        .navigation-list{
+            flex-direction: column;
+            padding: 0px 18px;
+            margin-top: 30px;
+
+            height: auto;
+            
+        }
+
+        .menu-title {
+            display: block;
+        }
+
+        .navigation-list-item {
+            padding: 12px 18px 12px 25px;
+            margin: 15px 0px;
+        }
+
+        .page .sidebar {
+            display: block !important;
+            position: sticky;
+            align-self: flex-start;
+            height: 100vh;
+            top: 0;
+            /* bottom: 0; */
+            order: 1;
+            width: 250px;
+        }
+
+        .sidebar-body {
+            height: auto;
+        }
+
+        .page {
+            height: 100%;
+        }
+
+        .navigationBar {
+            background-color: white;
+            height: 50px;
+            display: flex;
+            top: 0;
+            z-index: 1;
+            position: sticky;
+            padding: 38px 0px;
+            align-items: center;
+            box-shadow: 0 4px 2px -2px #c5c6c7;
+            justify-content: space-between;
+        }
+
+    }
+        
     </style>

@@ -7,7 +7,7 @@
                 <div class="container-fluid" id="box">
                     <div class="row mb-3">
                         <div class="col-md-12 order-md-1  p-2">
-                            <h1 class="text-center">Hello Admin</h1>
+                            <h1 class="text-center">Welcom Admin</h1>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -28,7 +28,7 @@
 <script>
     import SidebarComponent from './BaseComponents/SidebarComponent'
     import axios from 'axios'
-    
+    import Router from 'vue-router'
 
     export default {
         data() {
@@ -36,7 +36,8 @@
                 _menues: [
                     {
                         name: "Manage Organization",
-                        icon: "<i class='fas fa-calendar-alt'></i>",
+                        short: "Organization",
+                        icon: "<i class='fa-solid fa-building-ngo'></i>",
                         link: "ManageOrg"
                     }
 
@@ -45,6 +46,28 @@
         },
         components: {
             'sidebar-component' : SidebarComponent
+        },
+        methods: {
+        },
+        created: function() {
+   
+            axios.get('/loginCheck')
+                .then(response => {
+
+                    if(response.data == 'none') {
+                            this.$router.push({
+                            name: 'Home', 
+                        });
+                    }else if(response.data != 'admin'){
+                        this.$router.push({
+                            name: 'OrganizationRep', 
+                        });
+                    }
+            });
+
+        
+        },
+        mounted: function () {
         }
     }
 

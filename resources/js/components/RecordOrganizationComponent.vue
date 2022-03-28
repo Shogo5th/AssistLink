@@ -12,7 +12,7 @@
                     </div>
                     <div class="row mb-5">
                         <div class="col-lg-6 order-md-1  mx-auto">
-                            <div class="card formCard">
+                            <div class="card formCard shadow">
                                 <div class="card-body mb-3">
                                     <div class="row">
                                         <div class="col-lg-12 text-center">
@@ -23,15 +23,17 @@
                                         <div class="form-row my-5">
                                             <div class="col-lg-12">
                                                 <label class="form-label required">Organization Name</label>
-                                                <input required pattern="^([a-zA-Z0-9]{6,30})$" oninvalid="this.setCustomValidity('Enter enter between 6 and 15 single-byte alphanumeric characters.')" 
-                                                type="text" class="form-control" placeholder="Organization name" name="orgName">
+                                                <input required  
+                                                type="text" class="form-control" placeholder="Organization name" 
+                                                name="orgName" v-on:input="detectInput">
                                             </div>
                                         </div>
                                         
                                         <div class="form-row my-5">
                                             <div class="col-lg-12 mb-3">
                                                 <label class="form-label required">Address</label>
-                                                <input required type="text" class="form-control" placeholder="Address" name="address">
+                                                <input required type="text" class="form-control" placeholder="Address" 
+                                                name="address" v-on:input="detectInput">
                                             </div>
                                         </div>
 
@@ -53,23 +55,30 @@
             </section>
 
             <!-- Confirm Modal -->
-            <div class="modal fade" id="confirmModal" >
+            <div class="modal fade" data-bs-backdrop ="static" id="confirmModal" >
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Log out</h4>
+                            <h4 class="modal-title">Confirmation</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <h4 class="modal-title text-center">Are you sure to submit?</h4>
-                            <div class="mt-3">
+                            <!-- loading spinner -->
+                            <div class="d-flex justify-content-center mt-5 mb-5" id="loadingMenu" v-if="loading">
+                                <div class="spinner-border text-primary mt-5 mb-5" role="status" style="width: 5rem; height: 5rem;">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+
+                            <h4 class="modal-title text-center" v-show="!loading">Are you sure to submit?</h4>
+                            <div class="mt-3" v-show="!loading">
                                 <ul>
                                     <li>Organization Name: {{orgName}}</li>
                                     <li>Address: {{address}}</li>
                                 </ul>
                             </div> 
                         </div>
-                        <div class="modal-footer justify-content-center mt-3 mb-3">
+                        <div class="modal-footer justify-content-center mt-3 mb-3" v-show="!loading">
                             <button type="button" class="btn btn-primary" v-on:click="submit">Confirm</button>
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
                         </div>
@@ -79,7 +88,7 @@
             <!-- Confirm Modal -->
 
             <!-- Thankyou Modal -->
-            <div class="modal fade" id="thankyouModal">
+            <div class="modal fade" data-bs-backdrop ="static" id="thankyouModal">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -112,45 +121,80 @@
                 _menues: [
                     {
                         name: "Manage Organization",
-                        icon: "<i class='fas fa-calendar-alt'></i>",
+                        short: "Organization",
+                        icon: "<i class='fa-solid fa-building-ngo'></i>",
                         link: "ManageOrg"
                     }
 
                 ],
 
                 orgName: "",
-                address: ""
+                address: "",
+                changed: false,
+                loading: false
             }
         },
         components: {
             'sidebar-component' : SidebarComponent
         },
-        methods: {
-                confirm(event) {
-                        const {orgName,address} = Object.fromEntries(new FormData(event.target));
-                        this.orgName = orgName;
-                        this.address = address;
+        created: function() {
+   
+            axios.get('/loginCheck')
+                .then(response => {
 
-                        var confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'),{})
-                        confirmModal.show();
-                },
-                async submit() {
-                    const data = {
-                        orgName: this.orgName,
-                        address: this.address
+                    if(response.data == 'none') {
+                            this.$router.push({
+                            name: 'Home', 
+                        });
+                    }else if(response.data != 'admin'){
+                        this.$router.push({
+                            name: 'OrganizationRep', 
+                        });
                     }
-                    await axios.post('/addorg',data)
-                    const closeConfirmModal = bootstrap.Modal.getInstance(confirmModal);
-                    await closeConfirmModal.hide();
+            });
+            if(!this.changed)
+                window.addEventListener("beforeunload", this.prevent);
+        },
+        destroyed: function () {
+            if(!this.changed)
+                window.removeEventListener("beforeunload", this.prevent);
+        },
+        methods: {
+            detectInput(){
+                    this.changed = true;
+            },
+            prevent (event) {
+                event.returnValue = "Changes you made may not be saved.";
+            },
+            confirm(event) {
+                    const {orgName,address} = Object.fromEntries(new FormData(event.target));
+                    this.orgName = orgName;
+                    this.address = address;
 
-                    const thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'),{})
-                    await thankyouModal.show();
-
-                },
-                closeThankyouModal() {
-                    const closeThankyouModal = bootstrap.Modal.getInstance(thankyouModal)
-                    closeThankyouModal.hide()
+                    var confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'),{})
+                    confirmModal.show();
+            },
+            async submit() {
+                this.loading = true
+                const data = {
+                    orgName: this.orgName,
+                    address: this.address
                 }
+                await axios.post('/addorg',data)
+                
+                this.loading = false
+
+                const closeConfirmModal = bootstrap.Modal.getInstance(confirmModal);
+                await closeConfirmModal.hide();
+            
+                const thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'),{})
+                await thankyouModal.show();
+
+            },
+            closeThankyouModal() {
+                const closeThankyouModal = bootstrap.Modal.getInstance(thankyouModal)
+                closeThankyouModal.hide()
+            }
 
 
         }
