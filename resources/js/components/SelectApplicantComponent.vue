@@ -7,7 +7,6 @@
                 <div class="container-fluid" id="box">
                     <div class="row mb-3">
                         <div class="col-md-12 order-md-1  p-2">
-<<<<<<< HEAD
                             <h1 class="text-center">Record Aid Disbursement</h1>
                             <h4 class="text-center">Select Applicant</h4>
                             <h5 class="text-center">For Appeal ID: {{appealID}}</h5>
@@ -23,22 +22,12 @@
                         </div>
 
                         <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(applicant) in applicants" :key=applicant v-show="!loading">
-=======
-                            <h1 class="text-center">Select Applicant</h1>
-                            <h4 class="text-center">OrgaName : {{orgName}}</h4>
-                            <h4 class="text-center">For Appeal ID: {{appealID}}</h4>
-                        </div>
-                    </div>
-                    <div class="row mb-5">
-                        <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(applicant) in applicants" :key=applicant>
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                             <div class="card mb-3 shadow" style="max-width: 540px;">
                                 <div class="card-header">
                                     <h4>ID: {{applicant.IDno}}</h4>
                                 </div>
                                 <div class="card-body mb-3">
-                                    <p class="card-text">Name:{{applicant.fullname}}</p>
-                                    <p class="card-text">Address:{{applicant.address}}</p> 
+                                    <h5 class="card-text">Name:{{applicant.fullname}}</h5>
                                 </div>
 
                                 <div class="row mt-3 mb-3 text-center">
@@ -47,7 +36,6 @@
                                             <a href="#" class="btn btn-primary" v-on:click="setCookie(applicant.IDno)">View</a>
                                         </router-link>
                                     </div>
-<<<<<<< HEAD
                                 </div> 
                             </div> 
                         </div>
@@ -59,12 +47,6 @@
                             </router-link>  
                         </div>  
                     </div>
-=======
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
 
            
                 </div>
@@ -116,12 +98,8 @@
                 ],
                 orgID : "",
                 orgName : "",
-<<<<<<< HEAD
                 appealID: "",
                 loading: false
-=======
-                appealID: ""
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             }
         },
         components: {
@@ -148,10 +126,7 @@
                         this.orgName = response.data['orgName'];
                         this.orgID = response.data['orgID'];
                         this.getApplicant();
-<<<<<<< HEAD
                        
-=======
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                     }
             });
 
@@ -159,17 +134,11 @@
         },
         methods: {
             getApplicant() {
-<<<<<<< HEAD
                 this.loading = true;
                 axios.get('/getApplicant')
                     .then(response => {
                         this.applicants = response.data;
                         this.loading = false;
-=======
-                axios.get('/getApplicant')
-                    .then(response => {
-                        this.applicants = response.data;
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                 });
             },
             setCookie(IDno) {

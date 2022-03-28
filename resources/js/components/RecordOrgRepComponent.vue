@@ -8,7 +8,7 @@
                     <div class="row mb-3">
                         <div class="col-md-12 text-center">
                             <h3>Record a Organization Representative</h3>
-                            <h5>For {{$route.params.name}}</h5>
+                            <h5>For {{this.orgID}}</h5>
                         </div>
                     </div>
                     <div class="row mb-5">
@@ -24,45 +24,16 @@
                                         <div class="form-row my-5">
                                             <div class="col-lg-12">
                                                 <label class="form-label required">Username</label>
-<<<<<<< HEAD
                                                 <input required text="Enter enter between 6 and 15 single-byte alphanumeric characters." 
                                                 type="text" class="form-control" placeholder="Username" name="username" v-on:input="detectInput">
-=======
-<<<<<<< HEAD
-                                                <input required text="Enter enter between 6 and 15 single-byte alphanumeric characters." 
-=======
-<<<<<<< HEAD
-                                                <input required text="Enter enter between 6 and 15 single-byte alphanumeric characters." 
-=======
-<<<<<<< HEAD
-                                                <input required text="Enter enter between 6 and 15 single-byte alphanumeric characters." 
-=======
-<<<<<<< HEAD
-                                                <input required text="Enter enter between 6 and 15 single-byte alphanumeric characters." 
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                                <input required text="Enter enter between 6 and 15 single-byte alphanumeric characters." 
-=======
-                                                <input required oninvalid="this.setCustomValidity('Enter enter between 6 and 15 single-byte alphanumeric characters.')" 
->>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
->>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
-=======
-                                                <input required oninvalid="this.setCustomValidity('Enter enter between 6 and 15 single-byte alphanumeric characters.')" 
->>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
->>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
->>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
->>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
->>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
-                                                type="text" class="form-control" placeholder="Username" name="username">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
+
+ 
                                             </div>
                                         </div>
                                         
                                         <div class="form-row my-5">
                                             <div class="col-lg-6 mb-3">
                                                 <label class="form-label required">Full Name</label>
-<<<<<<< HEAD
                                                 <input required pattern=.*\S+.* title="Enter Firstname without space." 
                                                 type="text" class="form-control" placeholder="First Name" 
                                                 name="firstname" v-on:input="detectInput">
@@ -70,50 +41,32 @@
                                             <div class="col-lg-6">
                                                 <input type="text" required pattern=.*\S+.* title="tEnter Lastname without space." 
                                                 class="form-control" placeholder="Last Name" name="lastname" v-on:input="detectInput">
-=======
-                                                <input required pattern=.*\S+.* title="Enter Firstname without space." type="text" class="form-control" placeholder="First Name" name="firstname">
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <input type="text" required pattern=.*\S+.* title="tEnter Lastname without space." class="form-control" placeholder="Last Name" name="lastname">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                             </div>
                                         </div>
                                         
                                         <div class="form-row my-5">
                                             <div class="col-lg-12">
                                                <label class="form-label required">Mobile Number</label>
-<<<<<<< HEAD
                                                 <input required pattern="\d{2,4}-?\d{2,4}-?\d{3,4}" 
                                                 type="tel" class="form-control" placeholder="mobile No"
                                                  name="mobileNo" v-on:input="detectInput">
-=======
-                                                <input required pattern="\d{2,4}-?\d{2,4}-?\d{3,4}" type="tel" class="form-control" placeholder="mobile No" name="mobileNo">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                             </div>
                                         </div>
                                         <div class="form-row my-5">
                                             <div class="col-lg-12">
                                                <label class="form-label required">Email</label>
-<<<<<<< HEAD
                                                 <input required type="email" pattern = "[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
                                                 class="form-control" placeholder="Email" name="email" v-on:input="detectInput">
-=======
-                                                <input required type="email" pattern = "[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" placeholder="Email" name="email">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                             </div>
                                         </div>
                             
                                         <div class="form-row my-5 pb-5">
                                             <div class="col-lg-12">
                                               <label class="form-label required">Job Title</label>
-<<<<<<< HEAD
                                             <input required pattern="^([a-zA-Z0-9]{1,20})$" 
                                             title="Enter less than 20 characters" type="text" 
                                             class="form-control" placeholder="Job Title" 
                                             name="jobTitle" v-on:input="detectInput">
-=======
-                                            <input required pattern="^([a-zA-Z0-9]{1,20})$" title="Enter less than 20 characters" type="text" class="form-control" placeholder="Job Title" name="jobTitle">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                             </div>
                                         </div>
 
@@ -197,6 +150,7 @@
 
 <script>
     import SidebarComponent from './BaseComponents/SidebarComponent'
+    import Cookies from 'js-cookie';
     import axios from 'axios'
 
     export default {
@@ -206,15 +160,7 @@
                     {
                         name: "Manage Organization",
                         short: "Organization",
-<<<<<<< HEAD
                         icon: "<i class='fa-solid fa-building-ngo'></i>",
-=======
-<<<<<<< HEAD
-                        icon: "<i class='fa-solid fa-building-ngo'></i>",
-=======
-                        icon: "<i class='fas fa-calendar-alt'></i>",
->>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         link: "ManageOrg"
                     }
 
@@ -224,7 +170,7 @@
                 fullname: "",
                 mobileNo: "", 
                 email: "",
-                orgID: this.$route.params.id,
+                orgID: Cookies.get('orgID'),
                 jobTitle:"",
                 
                 allerros: [],
@@ -254,16 +200,12 @@
                     }
             });
 
-<<<<<<< HEAD
             if(!this.changed)
                 window.addEventListener("beforeunload", this.prevent);
         },
         destroyed: function () {
             if(!this.changed)
             window.removeEventListener("beforeunload", this.prevent);
-=======
-        
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
         },
         methods: {
             detectInput(){

@@ -1,13 +1,7 @@
 <template>
-<<<<<<< HEAD
+<div>
 <header-component v-bind:navFlag="false"></header-component>
-=======
-<<<<<<< HEAD
-<header-component v-bind:navFlag="false"></header-component>
-=======
-<header-component></header-component>
->>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
+
     <div class="py-4">
         <section>
             <div class="container-fluid" id="box">
@@ -18,15 +12,9 @@
                 </div>
                 <div class="row mb-5">
                     <div class="col-lg-6 order-md-1  mx-auto">
-<<<<<<< HEAD
+
                         <div class="card shadow">
-=======
-<<<<<<< HEAD
-                        <div class="card shadow">
-=======
-                        <div class="card">
->>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
+
                             <div class="card-body mb-3">
                                 <form class="p-3" v-on:submit.prevent="confirm">
                                     <div class="row">
@@ -117,18 +105,13 @@
 
         <!-- Confirm Modal -->
         <div class="modal fade" id="confirmModal" >
-<<<<<<< HEAD
             <div class="modal-dialog modal-dialog-centered" data-bs-backdrop ="static">
-=======
-            <div class="modal-dialog modal-dialog-centered">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Confirmation</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-<<<<<<< HEAD
                         
                         <!-- loading spinner -->
                         <div class="d-flex justify-content-center mt-5 mb-5" id="loadingMenu" v-if="loading">
@@ -139,10 +122,6 @@
 
                         <h4 class="modal-title text-center" v-show="!loading">Are you sure to contribute?</h4>
                         <div class="mt-3" v-show="!loading">
-=======
-                        <h4 class="modal-title text-center">Are you sure to contribute?</h4>
-                        <div class="mt-3">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                             <ul>
                                 <li>AppealID: {{selectedAppealID}}</li>
                                 <li>Organization: {{orgName}}</li>
@@ -152,11 +131,7 @@
                             </ul>
                         </div> 
                     </div>
-<<<<<<< HEAD
                     <div class="modal-footer justify-content-center mt-3 mb-3" v-show="!loading">
-=======
-                    <div class="modal-footer justify-content-center mt-3 mb-3">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         <button type="button" class="btn btn-primary" v-on:click="submit">Confirm</button>
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
                     </div>
@@ -166,11 +141,7 @@
         <!-- Confirm Modal -->
 
         <!-- Thankyou Modal -->
-<<<<<<< HEAD
         <div class="modal fade" id="thankyouModal" data-bs-backdrop ="static">
-=======
-        <div class="modal fade" id="thankyouModal">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -189,8 +160,8 @@
         </div>
         <!-- Thankyou Modal -->
     </div>
-<footer-component></footer-component>
-
+    <footer-component></footer-component>
+</div>
 </template>
 
 <script>
@@ -213,12 +184,8 @@
                 CashAmount: "",
                 paymentChannel: "",
                 referenceNo: "",
-<<<<<<< HEAD
                 contributionID: "",
                 loading: false
-=======
-                contributionID: ""
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
 
             }
         },
@@ -281,10 +248,7 @@
                 confirmModal.show()
             },
             async submit() {
-<<<<<<< HEAD
                 this.loading = true
-=======
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
 
                 let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
                 let randomID = '';
@@ -311,11 +275,7 @@
 
                 await axios.post('/addContribution',newContribution)
                 await axios.post('/addContribution/CashDonation',newCashDonation)
-<<<<<<< HEAD
                 this.loading = false
-=======
-
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                 // hide confirm modal
                 const closeConfirmModal = bootstrap.Modal.getInstance(confirmModal);
                 await closeConfirmModal.hide();

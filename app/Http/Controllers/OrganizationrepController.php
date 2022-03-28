@@ -4,60 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Organizationrep;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
 use App\Models\Organization;
 use App\Models\Applicant;
 use App\Models\User;
 use Crypt;
 use Illuminate\Support\Facades\Mail;
-
 use App\Mail\WelcomeMail;
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
-=======
->>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
->>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
->>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
-use App\Models\Organization;
-use App\Models\Applicant;
-use App\Models\User;
-
-use Illuminate\Support\Facades\Mail;
-
-use App\Mail\WelcomeMail;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-use App\Models\User;
->>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
->>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
-=======
-=======
-use App\Models\User;
->>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
->>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
->>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
->>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
->>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
 
 class OrganizationrepController extends Controller
 {
@@ -80,15 +32,8 @@ class OrganizationrepController extends Controller
             
                         'email' => $user[0]['email'],
                         'username' => $user[0]['username'],
-<<<<<<< HEAD
                         'password' => Crypt::decryptString($user[0]['password']),
-=======
-<<<<<<< HEAD
-                        'password' => Crypt::decryptString($user[0]['password']),
-=======
-                        'password' => $user[0]['password'],
->>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
+
                         'fullname' => $user[0]['fullname'],
                         'orgName' => $orgName[0]['orgName'],
                         'jobTitle' => $request->jobTitle
@@ -100,25 +45,8 @@ class OrganizationrepController extends Controller
 
     }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
-=======
->>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
->>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
->>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
->>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
+
+
     /*
     If wrong, return 0
     If Admin, return 1
@@ -126,10 +54,6 @@ class OrganizationrepController extends Controller
     If Applicant, return 3
     */
     public function login(Request $request) {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
 
         $orgrep = 
         Organizationrep::rightJoin('users', 'users.username', '=', 'organizationreps.userusername')
@@ -176,92 +100,10 @@ class OrganizationrepController extends Controller
         
        
     }
-<<<<<<< HEAD
-=======
-=======
-        
-        $orgrep = 
-        Organizationrep::rightJoin('users', 'users.username', '=', 'organizationreps.userusername')
-        ->where('users.username', '=', $request->username)->where('users.password', '=', $request->password)
-        ->get()->toArray();
-        
-        $applicant = 
-        Applicant::rightJoin('users', 'users.username', '=', 'applicants.userusername')
-        ->where('users.username', '=', $request->username)->where('users.password', '=', $request->password)
-        ->get()->toArray();
 
-        if(count($orgrep) == 0 & count($applicant) == 0) {
-            return 0;
-        }else if($orgrep[0]['jobTitle'] == null && $applicant[0]['IDno'] == null) {
-          
-           session()->put('type', 'admin');
-           return 1;
-
-       }else if($orgrep[0]['jobTitle'] != null){
-            
-            $orgName = Organization::select('orgName')->where('orgID',$orgrep[0]['OrganizationorgID'])->get()->toArray();
-
-            session()->put('type', 'rep');
-            session()->put('orgID',$orgrep[0]['OrganizationorgID']);
-            session()->put('orgName',$orgName[0]['orgName']);
-            session()->put('fullname',$orgrep[0]['fullname']);
-            session()->put('email',$orgrep[0]['email']);
-
-            return 2;
-       }else {
-           return 3;
-       }
-    }
-
->>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
     // send email
     public function send($parameter) {
 
         Mail::send(new WelcomeMail($parameter));
     }
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
-=======
-    public function login(Request $request) {
-        // INNER JOIN
-
-        if(($request->username == "admin") && ($request->password == "adminpassword")) {
-            return "admin";
-        }else {
-            $account = Organizationrep::Join('users', 'organizationreps.userusername', '=', 'organizationreps.userusername')
-            ->select('users.username','password','Organizationreps.OrganizationorgID')->where('username', '=', $request->username)->where('password', '=', $request->password)
-            ->get();
-    
-            $result = count($account);
-            if($result !=0) {
-                return $account;
-            }else {
-                return 0;
-            }
-            
-        }
-
-    }
->>>>>>> ce287262850a4b18030f7c8e24f2feb8115460eb
-<<<<<<< HEAD
->>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
-=======
->>>>>>> dc931297d3b9246f93ddf24b8b901b6cb438911b
->>>>>>> 4fcbc3d8b747cdff8de0cba84fb4db6e5c72b74d
->>>>>>> 0dd33233c80f93b4d4a8b8254b12ecbbf4b6b05e
->>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
 }

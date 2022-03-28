@@ -7,7 +7,6 @@
                 <div class="container-fluid" id="box">
                     <div class="row mb-3">
                         <div class="col-md-12 order-md-1  p-2">
-<<<<<<< HEAD
                             <h1 class="text-center">Record Aid Disbursement</h1>
                             <h4 class="text-center">Select Appeal</h4>
                         </div>
@@ -22,13 +21,6 @@
                         </div>
 
                         <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(appeal) in appeals" :key=appeal v-show="!loading">
-=======
-                            <h1 class="text-center">Select Appeal</h1>
-                        </div>
-                    </div>
-                    <div class="row mb-5">
-                        <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(appeal) in appeals" :key=appeal>
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                             <div class="card mb-3 shadow" style="max-width: 540px;">
                                 <div class="card-body mb-3">
                                     <h5>ID:{{appeal.appealID}}</h5>
@@ -94,12 +86,8 @@
                 ],
                 orgID: "",
                 orgName: "",
-<<<<<<< HEAD
                 appealID: "",
                 loading: false
-=======
-                appealID: ""
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             }
         },
         components: {
@@ -120,10 +108,7 @@
                             name: 'Admin'
                         });
                     }else {
-<<<<<<< HEAD
                         this.loading = true;
-=======
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         this.orgName = response.data['orgName'];
                         this.orgID = response.data['orgID'];
                     }
@@ -132,10 +117,7 @@
             axios.get('/getallappeal/currentAppeal')
                 .then(response => {
                     this.appeals = response.data;
-<<<<<<< HEAD
                     this.loading = false;
-=======
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             });
         },
         methods: {

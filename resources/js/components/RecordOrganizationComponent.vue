@@ -23,18 +23,11 @@
                                         <div class="form-row my-5">
                                             <div class="col-lg-12">
                                                 <label class="form-label required">Organization Name</label>
-<<<<<<< HEAD
+
                                                 <input required  
                                                 type="text" class="form-control" placeholder="Organization name" 
                                                 name="orgName" v-on:input="detectInput">
-=======
-<<<<<<< HEAD
-                                                <input required  
-=======
-                                                <input required pattern="^([a-zA-Z0-9\s]{6,30})$" title="Enter enter between 6 and 15 single-byte alphanumeric characters." 
->>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
-                                                type="text" class="form-control" placeholder="Organization name" name="orgName">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
+
                                             </div>
                                         </div>
                                         
@@ -131,15 +124,7 @@
                     {
                         name: "Manage Organization",
                         short: "Organization",
-<<<<<<< HEAD
                         icon: "<i class='fa-solid fa-building-ngo'></i>",
-=======
-<<<<<<< HEAD
-                        icon: "<i class='fa-solid fa-building-ngo'></i>",
-=======
-                        icon: "<i class='fas fa-calendar-alt'></i>",
->>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         link: "ManageOrg"
                     }
 
@@ -158,28 +143,6 @@
    
             axios.get('/loginCheck')
                 .then(response => {
-<<<<<<< HEAD
-=======
-
-                    if(response.data == 'none') {
-                            this.$router.push({
-                            name: 'Home', 
-                        });
-                    }else if(response.data != 'admin'){
-                        this.$router.push({
-                            name: 'OrganizationRep', 
-                        });
-                    }
-            });
-
-        
-        },
-        methods: {
-                confirm(event) {
-                        const {orgName,address} = Object.fromEntries(new FormData(event.target));
-                        this.orgName = orgName;
-                        this.address = address;
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
 
                     if(response.data == 'none') {
                             this.$router.push({

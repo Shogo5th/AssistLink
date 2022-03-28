@@ -4,16 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contribution;
-<<<<<<< HEAD
-use App\Models\searchCashDonation;
+use App\Models\CashDonation;
 use App\Models\Good;
-=======
-<<<<<<< HEAD
-use App\Models\searchCashDonation;
-use App\Models\Good;
-=======
->>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
+
 use DateTime;
 
 class ContributionController extends Controller
@@ -25,14 +18,12 @@ class ContributionController extends Controller
         $contribution->contributionID = $request->contributionID;
         $contribution->AppealOrganizationorgID = $request->orgID;
         $contribution->AppealappealID = $request->appealID;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
+
         $contribution->receivedDate = new Datetime();
 
         $contribution->save();
     }
+    
     public function searchCashDonation(Request $request){
         $cash = 
         Contribution::rightJoin('cashdonations', 'ContributioncontributionID', '=', 'contributions.contributionID')
@@ -49,15 +40,6 @@ class ContributionController extends Controller
         ->get()->toArray();
 
         return $goods; 
-;
-    }
-<<<<<<< HEAD
-=======
-=======
-        $contribution->receviedDtate = new Datetime();
 
-        $contribution->save();
     }
->>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
 }

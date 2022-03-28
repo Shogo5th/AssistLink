@@ -12,31 +12,19 @@
                                         <h2>AppealID: {{appealID}}</h2>
                                     </div>
                                 </div>
-<<<<<<< HEAD
                                 <div class="row mb-3" v-show="!loading">
-=======
-                                <div class="row mb-3">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                     <div class="col-lg-12">
                                         <h4>From <span style="font-size: 24px;">{{fromDate}}</span> To <span style="font-size: 24px;">{{toDate}}</span></h4>
                                     </div>
                                 </div>
-<<<<<<< HEAD
                                 <div class="row text-center" v-show="!loading">
-=======
-                                <div class="row text-center">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                     <div class="col-12">
                                         <router-link v-bind:to="{name: 'selectApplicant'}">
                                             <a href="#" class="btn btn-primary">Record Aid Disbursement</a>
                                         </router-link>
                                     </div>
                                 </div>
-<<<<<<< HEAD
                                 <div class="row mt-5 mb-3" v-show="!loading">
-=======
-                                <div class="row mt-5 mb-3">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                     <div class="col-lg-12 mb-5">
                                         <h2>Description: </h2>
                                         <p>{{description}}</p>
@@ -45,7 +33,6 @@
                                 
                                 <div class="row mt-3 mb-3">
                                     <div class="col-12">
-<<<<<<< HEAD
                                         <h3 v-show="!loading">Cash Contribution</h3>
                                          
                                         <!-- loading spinner -->
@@ -58,12 +45,6 @@
                                         <h5 class="text-center" v-show="this.cashDonations.length === 0 && !loading">There is no Cash Contribution recorded</h5>
                                             <div class ="contributiontable">
                                                 <table class="text-center table table-primary table-hover" v-show="this.cashDonations.length != 0 && !loading">
-=======
-                                        <h3>Cash Contribution</h3>
-                                        <h5 class="text-center" v-show="this.cashDonations.length === 0">There is no Cash Contribution recorded</h5>
-                                            <div class ="contributiontable">
-                                                <table class="text-center table table-primary table-hover" v-show="this.cashDonations.length != 0">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                                     <thead>
                                                         <tr>
                                                         <th scope="col">Contribution ID</th>
@@ -87,17 +68,10 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12 mt-3 mb-3">
-<<<<<<< HEAD
                                         <h3 v-show="!loading">Goods Contribution</h3>
                                         <h5 class="text-center" v-show="this.goodsDonations.length === 0 && !loading">There is no Goods Contribution recorded</h5>
                                         <div class="contributiontable">
                                        <table class="table table-primary table-hover text-center" v-show="this.goodsDonations.length != 0 && !loading">
-=======
-                                        <h3>Goods Contribution</h3>
-                                        <h5 class="text-center" v-show="this.goodsDonations.length === 0">There is no Goods Contribution recorded</h5>
-                                        <div class="contributiontable">
-                                       <table class="table table-primary table-hover text-center" v-show="this.goodsDonations.length != 0">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                             <thead>
                                                 <tr>
                                                 <th scope="col">Contribution ID</th>
@@ -119,11 +93,7 @@
                                 </div> 
                                 <div class="row mt-3 mb-3 text-center">
                                     <div class="col-12">
-<<<<<<< HEAD
                                         <router-link v-bind:to="{name: 'NewContribution'}" v-show="!loading">
-=======
-                                        <router-link v-bind:to="{name: 'NewContribution'}">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                             <a href="#" class="btn btn-primary">Record Contribution</a>
                                         </router-link>
                                     </div>
@@ -192,10 +162,7 @@
                 toDate: "",
                 description: "",
                 appealID: "",
-<<<<<<< HEAD
                 loading: false
-=======
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             }
         },
         components: {
@@ -214,10 +181,7 @@
                         name: 'Admin'
                     });
                 }else {
-<<<<<<< HEAD
                     this.loading = true;
-=======
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                     axios.post('/findAppeal',{'appealID':this.appealID})
                         .then(response => {
                             this.fromDate = response.data[0]['fromDate'];
@@ -234,15 +198,10 @@
                     axios.post('/viewContributions/Goods',{'appealID':this.appealID})
                         .then(response => {
                             this.goodsDonations = response.data;
-<<<<<<< HEAD
                             this.loading = false;
                     });
 
                     
-=======
-                    });
-
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                 }
             });
 
