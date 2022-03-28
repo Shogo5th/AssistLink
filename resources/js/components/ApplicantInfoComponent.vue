@@ -5,10 +5,7 @@
             <div class="container-fluid" id="box">
                 <div class="row mb-3">
                     <div class="col-md-12 text-center">
-<<<<<<< HEAD
                         <h1>Record Aid Disbursement</h1>
-=======
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         <h3>Applicant Info</h3>
                     </div>
                 </div>
@@ -17,16 +14,11 @@
                         <div class="card shadow">
                             <div class="card-body mb-3">
                                 <div class="row">
-<<<<<<< HEAD
                                     <div class="col-lg-12 text-center mb-5" v-show="!loading">
-=======
-                                    <div class="col-lg-12 text-center mb-5">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                         <h4>Organization: {{orgName}}</h4>
                                     </div>
                                 </div>
                                 <div class="row">
-<<<<<<< HEAD
                                     <!-- loading spinner -->
                                     <div class="d-flex justify-content-center mt-5 mb-5" id="loadingMenu" v-if="loading">
                                         <div class="spinner-border text-primary mt-5 mb-5" role="status" style="width: 5rem; height: 5rem;">
@@ -35,19 +27,12 @@
                                     </div>
 
                                     <div class="col-lg-12 mb-3" v-show="!loading">
-=======
-                                    <div class="col-lg-12 mb-3">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                         <h4>IDno : {{IDno}}</h4>
                                         <h4>Fullname: {{fullname}}</h4>
-                                        <h4>Address :<br><span style="font-size:18px;">{{address}}</span></h4>
+                                        <h4>Address :<span style="font-size:20px;">{{address}}</span></h4>
                                     </div>
                                 </div>
-<<<<<<< HEAD
                                 <div class="row text-center"  v-show="!loading">
-=======
-                                <div class="row text-center">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                     <div class="col-lg-12 mt-3 mb-3">
                                         <router-link v-bind:to="{name: 'viewDocuments'}">
                                             <button type="button" class="btn btn-outline-dark">View Documents</button>
@@ -55,20 +40,12 @@
                                     </div>  
                                 </div> 
                                 <div class="row text-center">
-<<<<<<< HEAD
                                     <div class="col-lg-6 mt-3 mb-3"  v-show="!loading">
-=======
-                                    <div class="col-lg-6 mt-3 mb-3">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                         <router-link v-bind:to="{name: 'addDisbursement'}">
                                             <button type="button" class="btn btn-outline-primary">Next</button>
                                         </router-link> 
                                     </div>  
-<<<<<<< HEAD
                                     <div class="col-lg-6 mt-3 mb-3" v-show="!loading">
-=======
-                                    <div class="col-lg-6 mt-3 mb-3">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                         <router-link v-bind:to="{name: 'selectApplicant'}">
                                             <button type="button" class="btn btn-outline-danger">Back</button>
                                         </router-link>  
@@ -127,12 +104,8 @@
                 IDno: "",
                 fullname: "",
                 address:"",
-<<<<<<< HEAD
                 householdIncome: "",
                 loading: false
-=======
-                householdIncome: ""
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
             }
         },
         components: {
@@ -151,18 +124,12 @@
                     });
 
                 }else if(response.data != 'admin'){
-<<<<<<< HEAD
                     this.loading = true;
-=======
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                     axios.post('/findOrganization',{'orgID':Cookies.get('orgID')})
                         .then(response => {
                             this.orgName = response.data[0]['orgName'];
                             Cookies.set('orgName',this.orgName);
-<<<<<<< HEAD
                             this.loading = false;
-=======
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         });
 
                     axios.post('/findApplicant',{'IDno':Cookies.get('IDno')})

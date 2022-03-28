@@ -11,7 +11,7 @@
                         </div>
                     </div>
                     <div class="row mb-5">
-<<<<<<< HEAD
+
 
                          <!-- loading spinner -->
                         <div class="d-flex justify-content-center mt-5 mb-5" id="loadingMenu" v-if="loading">
@@ -22,32 +22,20 @@
 
                         <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(org) in organizations" :key=org v-show="!loading">
                             <div class="card mb-3 shadow" style="max-width: 540px;">
-=======
-                        <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-for="(org) in organizations" :key=org>
-<<<<<<< HEAD
-                            <div class="card mb-3 shadow" style="max-width: 540px;">
-=======
-                            <div class="card mb-3" style="max-width: 540px;">
->>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                                 <div class="card-header">
                                     <h4>ID:{{org.orgID}}</h4>
                                 </div>
                                 <div class="card-body mb-3">
                                     <h5 class="card-title">{{org.orgName}}</h5>
                                     <p class="card-text">{{org.address}}</p>
-                                    <router-link v-bind:to="{name: 'NewOrgRep',params:{name: org.orgName, id: org.orgID}}">
-                                         <a href="#" class="btn btn-primary">Add Representative</a>
+                                    <router-link v-bind:to="{name: 'NewOrgRep'}">
+                                         <a href="#" class="btn btn-primary" v-on:click="setCookie(org.orgID,org.orgName)">Add Representative</a>
                                     </router-link>
 
                                 </div>
                             </div> 
                         </div>
-<<<<<<< HEAD
                         <div class="col-lg-4 col-sm-6 order-md-1  p-3" v-show="!loading">
-=======
-                        <div class="col-lg-4 col-sm-6 order-md-1  p-3">
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                             <div class="card shadow">
                                 <div class="card-body mb-4">
                                     <div class="text-center mt-3">
@@ -72,6 +60,7 @@
 
 <script>
     import SidebarComponent from './BaseComponents/SidebarComponent'
+    import Cookies from 'js-cookie';
     import axios from 'axios'
     
 
@@ -83,15 +72,7 @@
                     {
                         name: "Manage Organization",
                         short: "Organization",
-<<<<<<< HEAD
                         icon: "<i class='fa-solid fa-building-ngo'></i>",
-=======
-<<<<<<< HEAD
-                        icon: "<i class='fa-solid fa-building-ngo'></i>",
-=======
-                        icon: "<i class='fas fa-calendar-alt'></i>",
->>>>>>> 07e7e6840663499c77dcfd170e364524863bddae
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         link: "ManageOrg"
                     }
 
@@ -102,12 +83,10 @@
         components: {
             'sidebar-component' : SidebarComponent
         },
-        
         created() {
-<<<<<<< HEAD
-=======
-
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
+            Cookies.remove('OrgID');
+            Cookies.remove('orgName');
+            
             axios.get('/loginCheck')
                 .then(response => {
 
@@ -120,22 +99,20 @@
                             name: 'OrganizationRep'
                         });
                     }else {
-<<<<<<< HEAD
                         this.loading = true;
                         axios.get('/api/getorg')
                             .then(response => {
                                 this.organizations = response.data;
                                 this.loading = false;
-=======
-                        axios.get('/api/getorg')
-                            .then(response => {
-                                this.organizations = response.data;
->>>>>>> 555f23c691a99f0f3b8e9fce4d29a20738ac7a36
                         });
                     }
             });
         },
         methods: {
+            setCookie(id,name) {
+                Cookies.set('orgID',id);
+                Cookies.set('orgName',name);
+            }
         }
     }
 
