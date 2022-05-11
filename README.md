@@ -12,9 +12,11 @@ various organizations and their appeals for aid and make contributions which are
 goods. Donor information is not captured, however the organizations would have to record the contributions 
 received and the disbursements given
   
- ### Usecases
- #### Manage Organisation (Iteration 1)  
- #### Register Applicant (Iteration 1)  
+ ### Use Cases
+ #### Manage Organisation (Iteration 1)
+ To allow the HELP Aid Admin to manage Organizations and their representatives.
+ #### Register Applicant (Iteration 1)
+ To allow the Organization Representative to register Aid Applicants
  #### Record Contribution (Iteration 2)  
  #### Record Aid Disbursement (Iteration 2)  
  #### Organise Aid Appeal (Iteration 2)  
